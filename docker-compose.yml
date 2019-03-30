@@ -2,10 +2,37 @@ version: '3.7'
 services:
   scraps:
     container_name: scraps
-    build:
-      context: .
-      target: base
+    image: ebm17915/scraps:base
     ports:
       - 8080:80
     volumes:
-      - .:/var/www/html
+      - .:/var/www/
+    links:
+      - db
+  composer:
+    restart: 'no'
+    container_name: scraps_composer
+    image: composer:latest
+    command: install --ignore-platform-reqs
+    volumes:
+      - .:/app/
+  db:
+    image: mysql:5.6.41
+    container_name: scraps_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: scraps
+      MYSQL_USER: scraps
+      MYSQL_PASSWORD: scraps
+      MYSQL_ROOT_PASSWORD: scraps
+    ports:
+      - 3306:3306
+    volumes:
+      - db_data:/var/lib/mysql/
+  adminer:
+    container_name: scraps_adminer
+    image: adminer:latest
+    ports:
+      - 8081:8080
+volumes:
+    db_data:
