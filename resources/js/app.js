@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import router from  './router.js'
+import router from  '@/js/router.js'
 import store from './store'
-import App from "./App.vue";
+import App from "@/js/App.vue";
 import "../sass/app.scss";
 import VueGoogleHeatMap from 'vue-google-heatmap'
 
@@ -11,6 +11,8 @@ Vue.use(VueGoogleHeatMap, {
 })
 
 require('./bootstrap');
+require('@fortawesome/fontawesome-free/js/all.js');
+
 
 const app = new Vue({
     el: '#app',
