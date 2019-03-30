@@ -2,7 +2,7 @@
     <div>
         <google-map></google-map>
         <h1>Landing Page</h1>
-        <p>{{ welcomeString }}</p>
+        <router-link to="takePhoto">Camera View</router-link>
     </div>
 </template>
 
@@ -15,7 +15,6 @@ export default {
     },
     data(){
         return {
-            welcomeString:"Sup"
         }
     }
 }
