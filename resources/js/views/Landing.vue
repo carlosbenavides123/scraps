@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="landing">
         <google-map></google-map>
         <h1>Landing Page</h1>
         <router-link to="photo">Take Photo</router-link>

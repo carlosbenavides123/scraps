@@ -2,8 +2,7 @@
 <template>
     <vue-google-heatmap
         :points="points"
-        :width="400"
-        :height="350"
+        :height="'80vh'"
     />
 </template>
 
