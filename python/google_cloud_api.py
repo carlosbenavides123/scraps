@@ -33,4 +33,4 @@ def detect_labels(path):
 
 detect_labels("./photos/trash_if_this_doesnt_work_we_are_screwed.jpg")
 
-# /Users/carlosbenavides/Downloads/My Project-1ce2fa388d5e.json
+# /Users/carlosbenavides/Downloads/My Project-1ce2fa388d5e.jsonz
