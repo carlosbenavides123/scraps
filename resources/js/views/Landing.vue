@@ -1,7 +1,6 @@
 <template>
-    <div id="landing">
+    <div id="landing" class="text-center">
         <google-map></google-map>
-        <h1>Landing Page</h1>
         <router-link to="photo">Take Photo</router-link>
     </div>
 </template>

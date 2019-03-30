@@ -6157,7 +6157,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Landing',
@@ -42222,7 +42221,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("vue-google-heatmap", {
-    attrs: { points: _vm.points, height: "80vh" }
+    attrs: { points: _vm.points, height: "93vh" }
   })
 }
 var staticRenderFns = []
@@ -42249,11 +42248,9 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "landing" } },
+    { staticClass: "text-center", attrs: { id: "landing" } },
     [
       _c("google-map"),
-      _vm._v(" "),
-      _c("h1", [_vm._v("Landing Page")]),
       _vm._v(" "),
       _c("router-link", { attrs: { to: "photo" } }, [_vm._v("Take Photo")])
     ],
