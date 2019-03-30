@@ -10655,3 +10655,42 @@ a.text-dark:focus {
   }
 }
 
+.confirmation__image {
+  margin-top: 30px;
+  height: 200px;
+  width: 300px;
+  margin-left: 22.5px;
+}
+
+@media (min-width: 576px) {
+  .confirmation__image {
+    height: 300px;
+    width: 475px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .confirmation__image {
+    height: 350px;
+    width: 600px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 992px) {
+  .confirmation__image {
+    height: 425px;
+    width: 700px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .confirmation__image {
+    height: 555px;
+    width: 800px;
+    margin-left: 0px;
+  }
+}
+
