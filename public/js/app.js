@@ -6066,6 +6066,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -6090,9 +6095,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'googleMap',
+  name: "googleMap",
   data: function data() {
     return {
       ucla: {
@@ -6148,9 +6152,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Landing',
+  name: "Landing",
   components: {
     googleMap: _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -42168,7 +42173,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("router-view")], 1)
+  return _c(
+    "div",
+    [
+      _c("nav", { staticClass: "navbar navbar-dark bg-dark text-center" }, [
+        _c(
+          "div",
+          { staticClass: "text-center", staticStyle: { width: "100%" } },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "navbar-brand",
+                staticStyle: { margin: "0" },
+                attrs: { to: "/" }
+              },
+              [_vm._v("Scraps")]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("router-view")
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -42195,8 +42225,7 @@ var render = function() {
   return _c("vue-google-heatmap", {
     attrs: {
       points: _vm.points,
-      width: 400,
-      height: 350,
+      height: "93vh",
       lat: _vm.ucla.lat,
       lng: _vm.ucla.lng,
       initialZoom: 12
@@ -42227,17 +42256,28 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [
-      _c("google-map"),
-      _vm._v(" "),
-      _c("h1", [_vm._v("Landing Page")]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: "photo" } }, [_vm._v("Take Photo")])
-    ],
+    { staticClass: "text-center", attrs: { id: "landing" } },
+    [_c("google-map"), _vm._v(" "), _vm._m(0)],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "scrap-maps__camera text-center" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-dark scrap-maps__camera-button",
+          attrs: { to: "photo" }
+        },
+        [_vm._v("Snap a Photo "), _c("i", { staticClass: "fas fa-camera" })]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -58614,8 +58654,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
