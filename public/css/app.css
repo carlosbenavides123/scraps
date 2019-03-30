@@ -10675,3 +10675,65 @@ a.text-dark:focus {
   box-shadow: 0 3px 0.5rem rgba(0, 0, 0, 0.75);
 }
 
+.confirmation__image {
+  margin-top: 30px;
+  height: 200px;
+  width: 300px;
+  margin-left: -5px;
+}
+
+@media (min-width: 576px) {
+  .confirmation__image {
+    height: 300px;
+    width: 475px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .confirmation__image {
+    height: 350px;
+    width: 600px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 992px) {
+  .confirmation__image {
+    height: 425px;
+    width: 700px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .confirmation__image {
+    height: 555px;
+    width: 800px;
+    margin-left: 0px;
+  }
+}
+
+.confirmation__fields {
+  margin-top: 20px;
+  margin-left: 22px;
+}
+
+@media (min-width: 768px) {
+  .confirmation__fields {
+    margin-left: 45px;
+  }
+}
+
+@media (min-width: 992px) {
+  .confirmation__fields {
+    margin-left: 115px;
+  }
+}
+
+@media (min-width: 992px) {
+  .confirmation__fields {
+    margin-left: 155px;
+  }
+}
+

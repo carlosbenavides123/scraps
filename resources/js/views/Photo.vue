@@ -1,13 +1,21 @@
 <template>
-    <div class="camera-modal">
-        <video ref="video" class="camera-stream"/>
-        <div class="camera-modal-container">
-            <span @click="capture" class="take-picture-button take-picture-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-              <i class="fas fa-camera"></i>
-            </span>
+    <div class="container">
+        <div class="camera-modal">
+            <video ref="video" class="camera-stream"/>
+            <div class="camera-modal-container">
+                <span @click="capture" class="take-picture-button take-picture-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+                <i class="fas fa-camera"></i>
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-6 text-right">
+                    <router-link class="btn btn-dark" to="/">Back to Map</router-link>
+                </div>
+                <div class="col-6 text-left">
+                    <router-link class="btn btn-dark" to="/confirmation">Confirm Upload</router-link>
+                </div>
+            </div>
         </div>
-        <router-link to="/">Back to Map</router-link>
-
     </div>
 </template>
 
