@@ -3,17 +3,35 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TrashController extends Controller
 {
     public function saveTrash(Request $request)
     {
-        if (!$request->hasFile('photo')) {
-            return ['message_error' => 'No photo found.'];
+        if ($request->hasFile('photo')) {
+
+            //get filename with extension
+            $filenamewithextension = $request->file('photo')->getClientOriginalName();
+
+            //get filename without extension
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+
+            //get file extension
+            $extension = $request->file('photo')->getClientOriginalExtension();
+
+            //filename to store
+            $filenametostore = $filename . '_' . time() . '.' . $extension;
+
+            //Upload File to s3
+            $response = Storage::disk('s3')->put($filenametostore, fopen($request->file('photo'), 'r+'), 'public');
+            dd($response);
+
+
+            //Store $filenametostore in the database
+        } else {
+            return ['message' => 'No photo found'];
         }
-        // disk('local')
-        $path = $request->photo->store('images');
-        return $this->saveToDb($request, $path);
     }
     private function saveToDb($request, $path)
     {
@@ -33,5 +51,4 @@ class TrashController extends Controller
     {
         return TrashData::all();
     }
-}
 }
