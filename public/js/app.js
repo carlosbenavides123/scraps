@@ -6088,49 +6088,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'googleMap',
   data: function data() {
     return {
+      ucla: {
+        lat: 34.068921,
+        lng: -118.445181
+      },
       points: [{
-        lat: 37.786117,
-        lng: -122.440119
+        lat: 34.068921,
+        lng: -118.445181
       }, {
-        lat: 37.786564,
-        lng: -122.440209
+        lat: 34.828921,
+        lng: -118.943481
       }, {
-        lat: 37.786905,
-        lng: -122.440270
+        lat: 34.169021,
+        lng: -118.665181
       }, {
-        lat: 37.786956,
-        lng: -122.440279
+        lat: 33.068952,
+        lng: -127.445181
       }, {
-        lat: 37.800224,
-        lng: -122.433520
+        lat: 34.068959,
+        lng: -118.045181
       }, {
-        lat: 37.800155,
-        lng: -122.434101
+        lat: 34.168921,
+        lng: -119.445181
       }, {
-        lat: 37.800160,
-        lng: -122.434430
+        lat: 34.072921,
+        lng: -118.475181
       }, {
-        lat: 37.800378,
-        lng: -122.434527
-      }, {
-        lat: 37.800738,
-        lng: -122.434598
-      }, {
-        lat: 37.800938,
-        lng: -122.434650
-      }, {
-        lat: 37.801024,
-        lng: -122.434889
-      }, {
-        lat: 37.800955,
-        lng: -122.435392
-      }, {
-        lat: 37.800886,
-        lng: -122.435959
+        lat: 34.068921,
+        lng: -118.445181
       }]
     };
   }
@@ -42201,7 +42193,14 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("vue-google-heatmap", {
-    attrs: { points: _vm.points, width: 400, height: 350 }
+    attrs: {
+      points: _vm.points,
+      width: 400,
+      height: 350,
+      lat: _vm.ucla.lat,
+      lng: _vm.ucla.lng,
+      initialZoom: 12
+    }
   })
 }
 var staticRenderFns = []
@@ -58615,8 +58614,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
