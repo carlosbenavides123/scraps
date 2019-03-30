@@ -1,13 +1,9 @@
 <template>
-    <div>
-        <router-view/>
-    </div>
+    <p>Click</p>
 </template>
-
 <script>
 export default {
+    name:'imageCapture'
 
 }
 </script>
-
-
