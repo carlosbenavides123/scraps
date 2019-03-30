@@ -5,6 +5,8 @@ import App from "@/js/App.vue";
 import "../sass/app.scss";
 
 require('./bootstrap');
+require('@fortawesome/fontawesome-free/js/all.js');
+
 
 const app = new Vue({
     el: '#app',

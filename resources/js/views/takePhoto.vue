@@ -2,6 +2,9 @@
     <div>
         <p>Take Photo View</p>
         <image-capture></image-capture>
+        <router-link to="/">Back to Map</router-link>
+        <router-link to="/photo">Take Photo</router-link>
+
     </div>
 </template>
 
