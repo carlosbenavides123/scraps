@@ -9,10 +9,10 @@
             </div>
             <div class="row">
                 <div class="col-6 text-right">
-                    <router-link to="/">Back to Map</router-link>
+                    <router-link class="btn btn-dark" to="/">Back to Map</router-link>
                 </div>
                 <div class="col-6 text-left">
-                    <router-link to="/confirmation">Confirm Upload</router-link>
+                    <router-link class="btn btn-dark" to="/confirmation">Confirm Upload</router-link>
                 </div>
             </div>
         </div>

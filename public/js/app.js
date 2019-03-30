@@ -6218,6 +6218,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Confirmation',
   data: function data() {
@@ -42398,7 +42405,7 @@ var render = function() {
         _c("div", { staticClass: "col-12" }, [
           _c(
             "div",
-            { staticClass: "confirmation__fields-location text-center" },
+            { staticClass: "text-center" },
             [
               _c("vue-google-heatmap", {
                 staticClass: "confirmation__field-heatmap",
@@ -42411,6 +42418,23 @@ var render = function() {
                   initialZoom: 15
                 }
               })
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12" }, [
+          _c(
+            "div",
+            { staticClass: "text-center" },
+            [
+              _c(
+                "router-link",
+                { staticClass: "btn btn-dark", attrs: { to: "/" } },
+                [_vm._v("Confirm and Return to Map")]
+              )
             ],
             1
           )
@@ -42536,7 +42560,13 @@ var render = function() {
         _c(
           "div",
           { staticClass: "col-6 text-right" },
-          [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Back to Map")])],
+          [
+            _c(
+              "router-link",
+              { staticClass: "btn btn-dark", attrs: { to: "/" } },
+              [_vm._v("Back to Map")]
+            )
+          ],
           1
         ),
         _vm._v(" "),
@@ -42544,9 +42574,11 @@ var render = function() {
           "div",
           { staticClass: "col-6 text-left" },
           [
-            _c("router-link", { attrs: { to: "/confirmation" } }, [
-              _vm._v("Confirm Upload")
-            ])
+            _c(
+              "router-link",
+              { staticClass: "btn btn-dark", attrs: { to: "/confirmation" } },
+              [_vm._v("Confirm Upload")]
+            )
           ],
           1
         )

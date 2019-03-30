@@ -31,7 +31,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="confirmation__fields-location text-center">
+                    <div class="text-center">
                         <vue-google-heatmap class="confirmation__field-heatmap"
                             :points="trash.location"
                             :width="400"
@@ -40,6 +40,13 @@
                             :lng="trash.location[0].lng"
                             :initialZoom="15"
                         />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <router-link class="btn btn-dark" to="/">Confirm and Return to Map</router-link>
                     </div>
                 </div>
             </div>
