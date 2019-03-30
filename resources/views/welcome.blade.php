@@ -13,4 +13,17 @@
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDQhAlow7Z5MkpydWKb2mpvIy5qBq8zhp4",
+            authDomain: "scraps-62751.firebaseapp.com",
+            databaseURL: "https://scraps-62751.firebaseio.com",
+            projectId: "scraps-62751",
+            storageBucket: "scraps-62751.appspot.com",
+            messagingSenderId: "226967432877"
+        };
+        firebase.initializeApp(config);
+    </script>
 </html>

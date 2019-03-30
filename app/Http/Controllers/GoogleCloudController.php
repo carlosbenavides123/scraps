@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+// include_once './vendor/autoload.php';
 // require __DIR__ . '/vendor/autoload.php';
 
 use Illuminate\Http\Request;
@@ -22,16 +22,16 @@ class GoogleCloudController extends Controller
 
         # annotate the image
         $response = $imageAnnotator->labelDetection($path);
-        $labels = $response->getLabelAnnotations();
+        // $labels = $response->getLabelAnnotations();
 
-        if ($labels) {
-            print("Labels:" . PHP_EOL);
-            foreach ($labels as $label) {
-                return($label->getDescription() . PHP_EOL);
-            }
-        } else {
-            print('No label found' . PHP_EOL);
-        }
+        // if ($labels) {
+        //     print("Labels:" . PHP_EOL);
+        //     foreach ($labels as $label) {
+        //         return($label->getDescription() . PHP_EOL);
+        //     }
+        // } else {
+        //     print('No label found' . PHP_EOL);
+        // }
 
         $imageAnnotator->close();
     }
