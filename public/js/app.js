@@ -6070,27 +6070,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/imageCapture.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/imageCapture.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'imageCapture'
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6172,7 +6155,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_google_heatmap__WEBPACK_IMPOR
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../googleMaps/googleMapApi */ "./resources/js/googleMaps/googleMapApi.vue");
+/* harmony import */ var _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../components/googleMaps/googleMapApi */ "./resources/js/components/googleMaps/googleMapApi.vue");
 //
 //
 //
@@ -6185,7 +6168,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Landing',
   components: {
-    googleMap: _googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__["default"]
+    googleMap: _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {};
@@ -6203,6 +6186,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -6248,36 +6233,6 @@ __webpack_require__.r(__webpack_exports__);
     tracks.map(function (track) {
       return track.stop();
     });
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/TakePhoto.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/TakePhoto.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_imageCapture__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../components/imageCapture */ "./resources/js/components/imageCapture.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'takePhoto',
-  components: {
-    imageCapture: _components_imageCapture__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -42238,34 +42193,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/imageCapture.vue?vue&type=template&id=663f0bb6&":
-/*!***************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/imageCapture.vue?vue&type=template&id=663f0bb6& ***!
-  \***************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div")
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630&":
-/*!***************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630& ***!
-  \***************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=template&id=eace0b0a&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=template&id=eace0b0a& ***!
+  \**************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42310,7 +42241,7 @@ var render = function() {
       _vm._v(" "),
       _c("h1", [_vm._v("Landing Page")]),
       _vm._v(" "),
-      _c("router-link", { attrs: { to: "takePhoto" } }, [_vm._v("Camera View")])
+      _c("router-link", { attrs: { to: "photo" } }, [_vm._v("Take Photo")])
     ],
     1
   )
@@ -42337,54 +42268,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "camera-modal" }, [
-    _c("video", { ref: "video", staticClass: "camera-stream" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "camera-modal-container" }, [
-      _c(
-        "span",
-        {
-          staticClass:
-            "take-picture-button take-picture-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored",
-          on: { click: _vm.capture }
-        },
-        [_c("i", { staticClass: "fas fa-camera" })]
-      )
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/TakePhoto.vue?vue&type=template&id=0dd50b48&":
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/TakePhoto.vue?vue&type=template&id=0dd50b48& ***!
-  \*******************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "camera-modal" },
     [
-      _c("p", [_vm._v("Take Photo View")]),
+      _c("video", { ref: "video", staticClass: "camera-stream" }),
       _vm._v(" "),
-      _c("image-capture"),
+      _c("div", { staticClass: "camera-modal-container" }, [
+        _c(
+          "span",
+          {
+            staticClass:
+              "take-picture-button take-picture-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored",
+            on: { click: _vm.capture }
+          },
+          [_c("i", { staticClass: "fas fa-camera" })]
+        )
+      ]),
       _vm._v(" "),
-      _c("router-link", { attrs: { to: "/" } }, [_vm._v("Back to Map")]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: "/photo" } }, [_vm._v("Take Photo")])
+      _c("router-link", { attrs: { to: "/" } }, [_vm._v("Back to Map")])
     ],
     1
   )
@@ -58339,87 +58241,18 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/js/components/imageCapture.vue":
-/*!**************************************************!*\
-  !*** ./resources/js/components/imageCapture.vue ***!
-  \**************************************************/
+/***/ "./resources/js/components/googleMaps/googleMapApi.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/googleMaps/googleMapApi.vue ***!
+  \*************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _imageCapture_vue_vue_type_template_id_663f0bb6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./imageCapture.vue?vue&type=template&id=663f0bb6& */ "./resources/js/components/imageCapture.vue?vue&type=template&id=663f0bb6&");
-/* harmony import */ var _imageCapture_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./imageCapture.vue?vue&type=script&lang=js& */ "./resources/js/components/imageCapture.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _imageCapture_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _imageCapture_vue_vue_type_template_id_663f0bb6___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _imageCapture_vue_vue_type_template_id_663f0bb6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/imageCapture.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/imageCapture.vue?vue&type=script&lang=js&":
-/*!***************************************************************************!*\
-  !*** ./resources/js/components/imageCapture.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_imageCapture_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./imageCapture.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/imageCapture.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_imageCapture_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/imageCapture.vue?vue&type=template&id=663f0bb6&":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/components/imageCapture.vue?vue&type=template&id=663f0bb6& ***!
-  \*********************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_imageCapture_vue_vue_type_template_id_663f0bb6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./imageCapture.vue?vue&type=template&id=663f0bb6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/imageCapture.vue?vue&type=template&id=663f0bb6&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_imageCapture_vue_vue_type_template_id_663f0bb6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_imageCapture_vue_vue_type_template_id_663f0bb6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/googleMaps/googleMapApi.vue":
-/*!**************************************************!*\
-  !*** ./resources/js/googleMaps/googleMapApi.vue ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./googleMapApi.vue?vue&type=template&id=53e9d630& */ "./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630&");
-/* harmony import */ var _googleMapApi_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./googleMapApi.vue?vue&type=script&lang=js& */ "./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _googleMapApi_vue_vue_type_template_id_eace0b0a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./googleMapApi.vue?vue&type=template&id=eace0b0a& */ "./resources/js/components/googleMaps/googleMapApi.vue?vue&type=template&id=eace0b0a&");
+/* harmony import */ var _googleMapApi_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./googleMapApi.vue?vue&type=script&lang=js& */ "./resources/js/components/googleMaps/googleMapApi.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -58429,8 +58262,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _googleMapApi_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _googleMapApi_vue_vue_type_template_id_eace0b0a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _googleMapApi_vue_vue_type_template_id_eace0b0a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -58440,38 +58273,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/googleMaps/googleMapApi.vue"
+component.options.__file = "resources/js/components/googleMaps/googleMapApi.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js&":
-/*!***************************************************************************!*\
-  !*** ./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************/
+/***/ "./resources/js/components/googleMaps/googleMapApi.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/googleMaps/googleMapApi.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./googleMapApi.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./googleMapApi.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630&":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630& ***!
-  \*********************************************************************************/
+/***/ "./resources/js/components/googleMaps/googleMapApi.vue?vue&type=template&id=eace0b0a&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/googleMaps/googleMapApi.vue?vue&type=template&id=eace0b0a& ***!
+  \********************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./googleMapApi.vue?vue&type=template&id=53e9d630& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_template_id_eace0b0a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./googleMapApi.vue?vue&type=template&id=eace0b0a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=template&id=eace0b0a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_template_id_eace0b0a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_template_id_eace0b0a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -58490,9 +58323,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _js_views_Landing__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/views/Landing */ "./resources/js/views/Landing.vue");
-/* harmony import */ var _js_views_TakePhoto__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/views/TakePhoto */ "./resources/js/views/TakePhoto.vue");
-/* harmony import */ var _js_views_Photo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/js/views/Photo */ "./resources/js/views/Photo.vue");
-
+/* harmony import */ var _js_views_Photo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/views/Photo */ "./resources/js/views/Photo.vue");
 
 
 
@@ -58504,11 +58335,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: '/',
     component: _js_views_Landing__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/takePhoto',
-    component: _js_views_TakePhoto__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }, {
     path: '/photo',
-    component: _js_views_Photo__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _js_views_Photo__WEBPACK_IMPORTED_MODULE_3__["default"]
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
@@ -58688,15 +58516,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************!*\
   !*** ./resources/js/views/Photo.vue ***!
   \**************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Photo_vue_vue_type_template_id_46e3fba3_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Photo.vue?vue&type=template&id=46e3fba3&scoped=true& */ "./resources/js/views/Photo.vue?vue&type=template&id=46e3fba3&scoped=true&");
 /* harmony import */ var _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Photo.vue?vue&type=script&lang=js& */ "./resources/js/views/Photo.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _Photo_vue_vue_type_style_index_0_id_46e3fba3_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Photo.vue?vue&type=style&index=0&id=46e3fba3&scoped=true&lang=css& */ "./resources/js/views/Photo.vue?vue&type=style&index=0&id=46e3fba3&scoped=true&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Photo_vue_vue_type_style_index_0_id_46e3fba3_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Photo.vue?vue&type=style&index=0&id=46e3fba3&scoped=true&lang=css& */ "./resources/js/views/Photo.vue?vue&type=style&index=0&id=46e3fba3&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -58728,7 +58555,7 @@ component.options.__file = "resources/js/views/Photo.vue"
 /*!***************************************************************!*\
   !*** ./resources/js/views/Photo.vue?vue&type=script&lang=js& ***!
   \***************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58767,75 +58594,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_46e3fba3_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_46e3fba3_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/views/TakePhoto.vue":
-/*!******************************************!*\
-  !*** ./resources/js/views/TakePhoto.vue ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _TakePhoto_vue_vue_type_template_id_0dd50b48___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TakePhoto.vue?vue&type=template&id=0dd50b48& */ "./resources/js/views/TakePhoto.vue?vue&type=template&id=0dd50b48&");
-/* harmony import */ var _TakePhoto_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TakePhoto.vue?vue&type=script&lang=js& */ "./resources/js/views/TakePhoto.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _TakePhoto_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _TakePhoto_vue_vue_type_template_id_0dd50b48___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _TakePhoto_vue_vue_type_template_id_0dd50b48___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/views/TakePhoto.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/views/TakePhoto.vue?vue&type=script&lang=js&":
-/*!*******************************************************************!*\
-  !*** ./resources/js/views/TakePhoto.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TakePhoto_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./TakePhoto.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/TakePhoto.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TakePhoto_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/views/TakePhoto.vue?vue&type=template&id=0dd50b48&":
-/*!*************************************************************************!*\
-  !*** ./resources/js/views/TakePhoto.vue?vue&type=template&id=0dd50b48& ***!
-  \*************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TakePhoto_vue_vue_type_template_id_0dd50b48___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./TakePhoto.vue?vue&type=template&id=0dd50b48& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/TakePhoto.vue?vue&type=template&id=0dd50b48&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TakePhoto_vue_vue_type_template_id_0dd50b48___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TakePhoto_vue_vue_type_template_id_0dd50b48___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -6,6 +6,8 @@
               <i class="fas fa-camera"></i>
             </span>
         </div>
+        <router-link to="/">Back to Map</router-link>
+
     </div>
 </template>
 
