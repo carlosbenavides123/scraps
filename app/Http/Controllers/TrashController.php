@@ -21,11 +21,16 @@ class TrashController extends Controller
 
     private function saveToDb($request, $path)
     {
-        TrashData::create([
-            'lat' => $request['lat'],
-            'long' => $request['long'],
-            'file_location' => $path
-        ]);
+        try {
+            TrashData::create([
+                'lat' => $request['lat'],
+                'long' => $request['long'],
+                'file_location' => $path
+            ]);
+        } catch (\Exception $e) {
+            dd($e);
+        }
+
 
         return ['message' => 'Photo was successful'];
     }
