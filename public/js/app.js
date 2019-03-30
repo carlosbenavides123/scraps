@@ -1783,9 +1783,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_google_heatmap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-google-heatmap */ "./node_modules/vue-google-heatmap/src/index.js");
 //
 //
 //
@@ -1795,11 +1792,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_google_heatmap__WEBPACK_IMPORTED_MODULE_1__["default"], {
-  apiKey: 'AIzaSyAEAXEZ8Z-3ReCoSukBYutcDpzCvP9R-Jw'
-});
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'googleMap',
   data: function data() {
@@ -53128,11 +53120,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App.vue */ "./resources/js/App.vue");
 /* harmony import */ var _sass_app_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../sass/app.scss */ "./resources/sass/app.scss");
 /* harmony import */ var _sass_app_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_sass_app_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var vue_google_heatmap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-google-heatmap */ "./node_modules/vue-google-heatmap/src/index.js");
 
 
 
 
 
+
+var mapApiKey = document.head.querySelector("[name~=api][content]").content;
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_google_heatmap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  apiKey: mapApiKey
+});
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -53482,8 +53480,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
