@@ -8,12 +8,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import VueGoogleHeatMap from 'vue-google-heatmap'
-Vue.use(VueGoogleHeatMap, {
-    apiKey: 'AIzaSyAEAXEZ8Z-3ReCoSukBYutcDpzCvP9R-Jw'
-})
-
 export default {
     name:'googleMap',
     data(){
@@ -34,6 +28,7 @@ export default {
                 {lat: 37.800886, lng:-122.435959}
             ]
         }
-    }
+    },
+
 }
 </script>
