@@ -6151,9 +6151,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Landing',
+  name: "Landing",
   components: {
     googleMap: _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -42181,7 +42183,11 @@ var render = function() {
           [
             _c(
               "router-link",
-              { staticClass: "navbar-brand", attrs: { to: "/" } },
+              {
+                staticClass: "navbar-brand",
+                staticStyle: { margin: "0" },
+                attrs: { to: "/" }
+              },
               [_vm._v("Scraps")]
             )
           ],
@@ -42260,14 +42266,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "btn btn-primary btn-lg scrap-maps__camera",
-        attrs: { to: "photo" }
-      },
-      [_c("i", { staticClass: "fas fa-camera fa-2x" })]
-    )
+    return _c("div", { staticClass: "scrap-maps__camera text-center" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-dark scrap-maps__camera-button",
+          attrs: { to: "photo" }
+        },
+        [_vm._v("Snap a Photo "), _c("i", { staticClass: "fas fa-camera" })]
+      )
+    ])
   }
 ]
 render._withStripped = true

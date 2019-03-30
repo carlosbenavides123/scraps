@@ -1,20 +1,22 @@
 <template>
-    <div id="landing" class="text-center">
-        <google-map></google-map>
-        <button class="btn btn-primary btn-lg scrap-maps__camera" to="photo"><i class="fas fa-camera fa-2x" /></button>
-    </div>
+	<div id="landing" class="text-center">
+		<google-map/>
+		<div class="scrap-maps__camera text-center">
+			<button class="btn btn-dark scrap-maps__camera-button" to="photo">Snap a Photo <i class="fas fa-camera" /></button>
+		</div>
+	</div>
 </template>
 
 <script>
-import googleMap from './../components/googleMaps/googleMapApi'
+import googleMap from "./../components/googleMaps/googleMapApi";
 export default {
-    name:'Landing',
-    components: {
-        googleMap
-    },
-    data(){
-        return {
-        }
-    }
-}
+	name: "Landing",
+	components: {
+		googleMap
+	},
+	data() {
+		return {};
+	}
+};
 </script>
+
