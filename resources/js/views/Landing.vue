@@ -1,7 +1,7 @@
 <template>
     <div id="landing" class="text-center">
         <google-map></google-map>
-        <router-link to="photo">Take Photo</router-link>
+        <button class="btn btn-primary btn-lg scrap-maps__camera" to="photo"><i class="fas fa-camera fa-2x" /></button>
     </div>
 </template>
 

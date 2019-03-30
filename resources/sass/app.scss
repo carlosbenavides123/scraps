@@ -2,8 +2,9 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
+// Sass Files
 @import 'variables';
+@import 'base';
 
 // Bootstrap
 @import './../../node_modules/bootstrap/scss/bootstrap.scss';

@@ -6069,6 +6069,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -6090,49 +6092,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'googleMap',
+  name: "googleMap",
   data: function data() {
     return {
+      ucla: {
+        lat: 34.068921,
+        lng: -118.445181
+      },
       points: [{
-        lat: 37.786117,
-        lng: -122.440119
+        lat: 34.068921,
+        lng: -118.445181
       }, {
-        lat: 37.786564,
-        lng: -122.440209
+        lat: 34.828921,
+        lng: -118.943481
       }, {
-        lat: 37.786905,
-        lng: -122.440270
+        lat: 34.169021,
+        lng: -118.665181
       }, {
-        lat: 37.786956,
-        lng: -122.440279
+        lat: 33.068952,
+        lng: -127.445181
       }, {
-        lat: 37.800224,
-        lng: -122.433520
+        lat: 34.068959,
+        lng: -118.045181
       }, {
-        lat: 37.800155,
-        lng: -122.434101
+        lat: 34.168921,
+        lng: -119.445181
       }, {
-        lat: 37.800160,
-        lng: -122.434430
+        lat: 34.072921,
+        lng: -118.475181
       }, {
-        lat: 37.800378,
-        lng: -122.434527
-      }, {
-        lat: 37.800738,
-        lng: -122.434598
-      }, {
-        lat: 37.800938,
-        lng: -122.434650
-      }, {
-        lat: 37.801024,
-        lng: -122.434889
-      }, {
-        lat: 37.800955,
-        lng: -122.435392
-      }, {
-        lat: 37.800886,
-        lng: -122.435959
+        lat: 34.068921,
+        lng: -118.445181
       }]
     };
   }
@@ -42180,18 +42174,20 @@ var render = function() {
   return _c(
     "div",
     [
-      _c(
-        "nav",
-        { staticClass: "navbar navbar-dark bg-dark" },
-        [
-          _c(
-            "router-link",
-            { staticClass: "navbar-brand", attrs: { to: "/" } },
-            [_vm._v("Scraps")]
-          )
-        ],
-        1
-      ),
+      _c("nav", { staticClass: "navbar navbar-dark bg-dark text-center" }, [
+        _c(
+          "div",
+          { staticClass: "text-center", staticStyle: { width: "100%" } },
+          [
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand", attrs: { to: "/" } },
+              [_vm._v("Scraps")]
+            )
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
       _c("router-view")
     ],
@@ -42221,7 +42217,13 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("vue-google-heatmap", {
-    attrs: { points: _vm.points, height: "93vh" }
+    attrs: {
+      points: _vm.points,
+      height: "93vh",
+      lat: _vm.ucla.lat,
+      lng: _vm.ucla.lng,
+      initialZoom: 12
+    }
   })
 }
 var staticRenderFns = []
@@ -42249,15 +42251,25 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "text-center", attrs: { id: "landing" } },
-    [
-      _c("google-map"),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: "photo" } }, [_vm._v("Take Photo")])
-    ],
+    [_c("google-map"), _vm._v(" "), _vm._m(0)],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-primary btn-lg scrap-maps__camera",
+        attrs: { to: "photo" }
+      },
+      [_c("i", { staticClass: "fas fa-camera fa-2x" })]
+    )
+  }
+]
 render._withStripped = true
 
 
