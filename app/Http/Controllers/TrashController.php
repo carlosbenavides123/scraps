@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TrashData;
+use Illuminate\Support\Facades\Storage;
 
 class TrashController extends Controller
 {
@@ -13,7 +14,7 @@ class TrashController extends Controller
         if (!$request->hasFile('photo')) {
             return ['message_error' => 'No photo found.'];
         }
-
+        // disk('local')
         $path = $request->photo->store('images');
 
         return $this->saveToDb($request, $path);
