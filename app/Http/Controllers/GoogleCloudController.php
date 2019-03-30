@@ -16,7 +16,7 @@ class GoogleCloudController extends Controller
         putenv('GOOGLE_APPLICATION_CREDENTIALS=./gcp_key.json');
         // dd(getcwd());
         $imageAnnotator = new ImageAnnotatorClient([
-            'credentials' => '/var/www/html/gcp_key.json'
+            'credentials' => '/var/www/gcp_key.json'
         ]);
         // $imageAnnotator->useApplicationDefaultCredentials();
 
