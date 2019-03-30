@@ -6157,10 +6157,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Confirmation',
   data: function data() {
-    return {};
+    return {
+      trash: {
+        size: 'large',
+        location: [{
+          lat: 34.828921,
+          lng: -118.943481
+        }]
+      }
+    };
   }
 });
 
@@ -42269,30 +42307,86 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c("div", { staticClass: "confirmation__fields" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "text-center" }, [
-            _c("h1", [_vm._v("Confirmation Page")])
+          _c("div", { staticClass: "text-left" }, [
+            _c("p", { staticClass: "confirmation__fields-size" }, [
+              _vm._v("Size: " + _vm._s(_vm.trash.size))
+            ])
           ])
         ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "text-center" }, [
-            _c("img", {
-              staticClass: "confirmation__image",
-              attrs: { src: "/images/trash_1.jpg", alt: "" }
-            })
+          _c("div", { staticClass: "text-left" }, [
+            _c("p", { staticClass: "confirmation__fields-size" }, [
+              _vm._v(
+                "Location: " +
+                  _vm._s(_vm.trash.location[0].lat) +
+                  " x " +
+                  _vm._s(_vm.trash.location[0].lng)
+              )
+            ])
           ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12" }, [
+          _c(
+            "div",
+            { staticClass: "confirmation__fields-location text-center" },
+            [
+              _c("vue-google-heatmap", {
+                staticClass: "confirmation__field-heatmap",
+                attrs: {
+                  points: _vm.trash.location,
+                  width: 400,
+                  height: 325,
+                  lat: _vm.trash.location[0].lat,
+                  lng: _vm.trash.location[0].lng,
+                  initialZoom: 15
+                }
+              })
+            ],
+            1
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "text-center" }, [
+          _c("h1", [_vm._v("Confirmation Page")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "text-center" }, [
+          _c("img", {
+            staticClass: "confirmation__image",
+            attrs: { src: "/images/trash_1.jpg", alt: "" }
+          })
         ])
       ])
     ])

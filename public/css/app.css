@@ -10659,7 +10659,7 @@ a.text-dark:focus {
   margin-top: 30px;
   height: 200px;
   width: 300px;
-  margin-left: 22.5px;
+  margin-left: -5px;
 }
 
 @media (min-width: 576px) {
@@ -10691,6 +10691,29 @@ a.text-dark:focus {
     height: 555px;
     width: 800px;
     margin-left: 0px;
+  }
+}
+
+.confirmation__fields {
+  margin-top: 20px;
+  margin-left: 22px;
+}
+
+@media (min-width: 768px) {
+  .confirmation__fields {
+    margin-left: 45px;
+  }
+}
+
+@media (min-width: 992px) {
+  .confirmation__fields {
+    margin-left: 115px;
+  }
+}
+
+@media (min-width: 992px) {
+  .confirmation__fields {
+    margin-left: 155px;
   }
 }
 
