@@ -22,7 +22,8 @@ class TrashController extends Controller
 
     private function saveToDb($request, $path)
     {
-        $path = storage_path() . $path;
+        $path = storage_path() . '/'. $path;
+
         try {
             TrashData::create([
                 'lat' => $request['lat'],
