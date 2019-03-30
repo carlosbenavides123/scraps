@@ -17,7 +17,8 @@ class CreateTrashesTable extends Migration
             $table->bigIncrements('id');
             $table->decimal('lat', 10, 8);
             $table->decimal('long', 11, 8);
-            $table->string('file_location');
+            $table->string('size');
+            $table->string('url');
             $table->timestamps();
         });
     }
