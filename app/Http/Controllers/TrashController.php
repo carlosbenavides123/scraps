@@ -57,7 +57,7 @@ class TrashController extends Controller
     {
         return Trash::all();
     }
-
+    
     private function getFileName($request, $filenamewithextension)
     {
         //get filename without extension
@@ -65,7 +65,13 @@ class TrashController extends Controller
         //get file extension
         $extension = $request->file('photo')->getClientOriginalExtension();
         //filename to store
-        $filenametostore = $filename . '_' . time() . '.' . $extension;
-        return $filenametostore;
+        $filenametostore = $filename . '_' . time() . '.' .$extension;
+        return      $filenametostore;
     }
 }
+
+ 
+ 
+ 
+ 
+ 
