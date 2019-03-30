@@ -5377,6 +5377,11 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-google-heatmap@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-google-heatmap/-/vue-google-heatmap-1.0.1.tgz#4c089753cb6d5c94e04a04f83c99b3caeeff4898"
+  integrity sha512-04sBtXfmf2JehFFgHBLeckuxDDpdasOBck0oiC228zJDqM2GikfYYvKM7a2LRMeGYCdn6IS6UxRnUvd7j3OdMA==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"

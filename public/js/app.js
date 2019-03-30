@@ -1774,6 +1774,82 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_google_heatmap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-google-heatmap */ "./node_modules/vue-google-heatmap/src/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_google_heatmap__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  apiKey: 'AIzaSyAEAXEZ8Z-3ReCoSukBYutcDpzCvP9R-Jw'
+});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'googleMap',
+  data: function data() {
+    return {
+      points: [{
+        lat: 37.786117,
+        lng: -122.440119
+      }, {
+        lat: 37.786564,
+        lng: -122.440209
+      }, {
+        lat: 37.786905,
+        lng: -122.440270
+      }, {
+        lat: 37.786956,
+        lng: -122.440279
+      }, {
+        lat: 37.800224,
+        lng: -122.433520
+      }, {
+        lat: 37.800155,
+        lng: -122.434101
+      }, {
+        lat: 37.800160,
+        lng: -122.434430
+      }, {
+        lat: 37.800378,
+        lng: -122.434527
+      }, {
+        lat: 37.800738,
+        lng: -122.434598
+      }, {
+        lat: 37.800938,
+        lng: -122.434650
+      }, {
+        lat: 37.801024,
+        lng: -122.434889
+      }, {
+        lat: 37.800955,
+        lng: -122.435392
+      }, {
+        lat: 37.800886,
+        lng: -122.435959
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Landing.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Landing.vue?vue&type=script&lang=js& ***!
@@ -1783,6 +1859,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../googleMaps/googleMapApi */ "./resources/js/googleMaps/googleMapApi.vue");
 //
 //
 //
@@ -1790,8 +1867,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Landing',
+  components: {
+    googleMap: _googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       welcomeString: "Sup"
@@ -36828,6 +36910,265 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue":
+/*!******************************************************************!*\
+  !*** ./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VueGoogleHeatmap_vue_vue_type_template_id_37e47951___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VueGoogleHeatmap.vue?vue&type=template&id=37e47951& */ "./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=template&id=37e47951&");
+/* harmony import */ var _VueGoogleHeatmap_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VueGoogleHeatmap.vue?vue&type=script&lang=js& */ "./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _VueGoogleHeatmap_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _VueGoogleHeatmap_vue_vue_type_template_id_37e47951___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _VueGoogleHeatmap_vue_vue_type_template_id_37e47951___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_index_js_vue_loader_options_VueGoogleHeatmap_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../vue-loader/lib??vue-loader-options!./VueGoogleHeatmap.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_vue_loader_lib_index_js_vue_loader_options_VueGoogleHeatmap_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=template&id=37e47951&":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=template&id=37e47951& ***!
+  \*************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_VueGoogleHeatmap_vue_vue_type_template_id_37e47951___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../vue-loader/lib??vue-loader-options!./VueGoogleHeatmap.vue?vue&type=template&id=37e47951& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=template&id=37e47951&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_VueGoogleHeatmap_vue_vue_type_template_id_37e47951___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_VueGoogleHeatmap_vue_vue_type_template_id_37e47951___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-google-heatmap/src/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/vue-google-heatmap/src/index.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VueGoogleHeatmap_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VueGoogleHeatmap.vue */ "./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue");
+/* harmony import */ var _loader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loader.js */ "./node_modules/vue-google-heatmap/src/loader.js");
+
+
+
+_VueGoogleHeatmap_vue__WEBPACK_IMPORTED_MODULE_0__["default"].install = function(Vue, options) {
+  Vue.component(_VueGoogleHeatmap_vue__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VueGoogleHeatmap_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+  if (!options) {
+    console.error('No Google Map API key provided.');
+    return;
+  }
+
+  if (options.apiKey) {
+    _loader_js__WEBPACK_IMPORTED_MODULE_1__["default"].load(options.apiKey);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (_VueGoogleHeatmap_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-google-heatmap/src/loader.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/vue-google-heatmap/src/loader.js ***!
+  \*******************************************************/
+/*! exports provided: loaded, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loaded", function() { return loaded; });
+const loaded = new Promise((resolve, reject) => {
+  window['vueGoogleMapsInit'] = resolve;
+});
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  loaded: false,
+  load(apiKey) {
+    if (!this.loaded) {
+      const scriptElement = document.createElement('SCRIPT');
+
+      const url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=visualization&callback=vueGoogleMapsInit`;
+
+      scriptElement.setAttribute('src', url);
+      scriptElement.setAttribute('async', '');
+      scriptElement.setAttribute('defer', '');
+      document.head.appendChild(scriptElement);
+
+      this.loaded = true;
+    } else {
+      throw new Error('Google Maps has already been loaded.');
+    }
+  }
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/index.js?!./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./loader */ "./node_modules/vue-google-heatmap/src/loader.js");
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'vue-google-heatmap',
+  props: {
+    lat: {
+      type: Number,
+      default: () => 37.775
+    },
+    lng: {
+      type: Number,
+      default: () => -122.434
+    },
+    initialZoom: {
+      type: Number,
+      default: () => 13
+    },
+    mapType: {
+      type: String,
+      default: () => 'roadmap'
+    },
+    points: {
+      type: Array,
+      required: true
+    },
+    width: {
+      type: [String, Number],
+      default: () => '100%'
+    },
+    height: {
+      type: [String, Number],
+      default: () => '100%'
+    }
+  },
+  computed: {
+    mapWidth() {
+      if (typeof this.width === 'string') {
+        return this.width;
+      } else {
+        return `${this.width}px`;
+      }
+    },
+    mapHeight() {
+      if (typeof this.height === 'string') {
+        return this.height;
+      } else {
+        return `${this.height}px`;
+      }
+    },
+    heatmapPoints() {
+      return this.points.map(
+        point => new google.maps.LatLng(point.lat, point.lng)
+      );
+    }
+  },
+  created() {
+    return _loader__WEBPACK_IMPORTED_MODULE_0__["loaded"].then(() => {
+      const mapElement = this.$refs.map;
+
+      this.$mapObject = new google.maps.Map(mapElement, {
+        zoom: this.initialZoom,
+        center: { lat: this.lat, lng: this.lng },
+        mapTypeId: this.mapType
+      });
+
+      this.$heatmap = new google.maps.visualization.HeatmapLayer({
+        data: this.heatmapPoints,
+        map: this.$mapObject
+      });
+
+      this.$heatmap.setMap(this.$mapObject);
+    });
+  }
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=template&id=37e47951&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue?vue&type=template&id=37e47951& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {
+    ref: "map",
+    style: "width: " + _vm.mapWidth + "; height: " + _vm.mapHeight
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/App.vue?vue&type=template&id=f348271a&":
 /*!*******************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/App.vue?vue&type=template&id=f348271a& ***!
@@ -36856,6 +37197,32 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("vue-google-heatmap", {
+    attrs: { points: _vm.points, width: 400, height: 350 }
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Landing.vue?vue&type=template&id=38c4eac8&":
 /*!*****************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Landing.vue?vue&type=template&id=38c4eac8& ***!
@@ -36871,11 +37238,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("Landing Page")]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.welcomeString))])
-  ])
+  return _c(
+    "div",
+    [
+      _c("google-map"),
+      _vm._v(" "),
+      _c("h1", [_vm._v("Landing Page")]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.welcomeString))])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -52822,6 +53195,75 @@ if (token) {
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
+
+/***/ }),
+
+/***/ "./resources/js/googleMaps/googleMapApi.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/googleMaps/googleMapApi.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./googleMapApi.vue?vue&type=template&id=53e9d630& */ "./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630&");
+/* harmony import */ var _googleMapApi_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./googleMapApi.vue?vue&type=script&lang=js& */ "./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _googleMapApi_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/googleMaps/googleMapApi.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./googleMapApi.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/googleMaps/googleMapApi.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./googleMapApi.vue?vue&type=template&id=53e9d630& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/googleMaps/googleMapApi.vue?vue&type=template&id=53e9d630&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_googleMapApi_vue_vue_type_template_id_53e9d630___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
