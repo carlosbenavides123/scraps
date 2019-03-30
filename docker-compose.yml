@@ -22,5 +22,10 @@ services:
       - 3306:3306
     volumes:
       - db_data:/var/lib/mysql/
+  adminer:
+    container_name: scraps_adminer
+    image: adminer:latest
+    ports:
+      - 8081:8080
 volumes:
     db_data:
