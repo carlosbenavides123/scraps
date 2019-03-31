@@ -6152,6 +6152,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6228,12 +6232,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     console.log("hello");
-    this.$store.dispatch("populategoogleapi");
-  } //   mounted() {
-  //     console.log("mounted");
-  //     this.$store.dispatch("populategoogleapi");
-  //   }
-
+    this.$store.dispatch("populategoogleapi"); // if(this.photoId){
+    //     this.timer = setInterval(this.photoId, 300000)
+    // }
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+    location: function location(state) {
+      return state.locationPoints;
+    }
+  }), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['photoId'])),
+  mounted: function mounted() {},
+  beforeDestroy: function beforeDestroy() {// clearInterval(this.photoId)
+  }
 });
 
 /***/ }),
@@ -6361,7 +6371,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       file: null,
       modal: false,
-      imageData: null
+      imageData: null,
+      timer: ''
     };
   },
   methods: (_methods = {
@@ -6371,7 +6382,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     sendImage: function sendImage() {
       var formData = new FormData();
       formData.append('photo', this.file);
-      formData.append('long', 34.073959);
+      formData.append('lng', 34.073959);
       formData.append('lat', -118.065181);
       formData.append('size', 23); // let payload = {
       // 	photo: url,
@@ -58995,7 +59006,6 @@ __webpack_require__.r(__webpack_exports__);
     var commit = _ref.commit;
     var path = "/api/trash/all";
     axios.get(path).then(function (res) {
-      console.log(res);
       commit("POPULATEGOOGLEAPI", res.data);
     });
   },
@@ -59024,7 +59034,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({// majorData: state => index => state.majorCards[index].majorData
+/* harmony default export */ __webpack_exports__["default"] = ({
+  // majorData: state => index => state.majorCards[index].majorData
+  photoId: function photoId(state) {
+    return function (index) {
+      return state.locationsPoints[index].id;
+    };
+  } //  state.locationPoints[Object.keys(state.locationPoints).length].id
+
 });
 
 /***/ }),
@@ -59067,9 +59084,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   POPULATEGOOGLEAPI: function POPULATEGOOGLEAPI(state, payload) {
-    console.log("mutations");
     console.log(payload);
-    console.log("mutations");
     state.locationPoints = payload;
   },
   FETCH_PHOTO_INFO: function FETCH_PHOTO_INFO(state, payload) {

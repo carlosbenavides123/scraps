@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
 export default {
   name: "googleMap",
   data() {
@@ -37,13 +37,28 @@ export default {
       ]
     };
   },
-  created() {
+  created(){
     console.log("hello");
     this.$store.dispatch("populategoogleapi");
-  }
-  //   mounted() {
-  //     console.log("mounted");
-  //     this.$store.dispatch("populategoogleapi");
-  //   }
+    // if(this.photoId){
+    //     this.timer = setInterval(this.photoId, 300000)
+    // }
+  },
+  computed: {
+      ...mapState({
+              location: state => state.locationPoints
+        }),
+      ...mapGetters(
+          [
+              'photoId'
+          ]
+      )
+  },
+  mounted(){
+
+  },
+  beforeDestroy(){
+    // clearInterval(this.photoId)
+  },
 };
 </script>
