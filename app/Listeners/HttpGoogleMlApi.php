@@ -26,8 +26,13 @@ class HttpGoogleMlApi implements ShouldQueue
      */
     public function handle(CallGoogleMlApi $event)
     {
+        $server = 'https://api.github.com/repos/guzzle/guzzle';
+        $url = $event->url;
         $client = new \GuzzleHttp\Client();
-        $response = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
+
+        $payload = ['url' => $url];
+
+        $response = $client->request('POST', $server, $payload);
         // dd($response);
         $event->broadcastOn();
     }
