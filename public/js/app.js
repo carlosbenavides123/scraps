@@ -6075,10 +6075,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/confirmationModal.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/confirmationModal.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6095,6 +6095,79 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['imageData'],
+  data: function data() {
+    return {
+      trash: {
+        size: "large",
+        location: [{
+          lat: 34.828921,
+          lng: -118.943481
+        }]
+      }
+    };
+  },
+  methods: {
+    closeModal: function closeModal() {
+      this.$emit('closeModal');
+    },
+    sendImage: function sendImage() {
+      this.$emit('sendImage');
+      this.$emit('closeModal');
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "googleMap",
   data: function data() {
@@ -6107,11 +6180,11 @@ __webpack_require__.r(__webpack_exports__);
         lat: 34.068921,
         lng: -118.445181
       }, {
-        lat: 34.062500,
-        lng: -118.448020
+        lat: 34.0625,
+        lng: -118.44802
       }, {
-        lat: 34.063030,
-        lng: -118.447990
+        lat: 34.06303,
+        lng: -118.44799
       }, {
         lat: 33.068952,
         lng: -127.445181
@@ -6119,23 +6192,23 @@ __webpack_require__.r(__webpack_exports__);
         lat: 34.068959,
         lng: -118.045181
       }, {
-        lat: 34.071300,
-        lng: -118.439670
+        lat: 34.0713,
+        lng: -118.43967
       }, {
-        lat: 34.075240,
-        lng: -118.444440
+        lat: 34.07524,
+        lng: -118.44444
       }, {
-        lat: 34.069190,
-        lng: -118.445140
+        lat: 34.06919,
+        lng: -118.44514
       }, {
-        lat: 34.070190,
-        lng: -118.555140
+        lat: 34.07019,
+        lng: -118.55514
       }, {
-        lat: 34.064830,
-        lng: -118.444370
+        lat: 34.06483,
+        lng: -118.44437
       }, {
-        lat: 34.071300,
-        lng: -118.639670
+        lat: 34.0713,
+        lng: -118.63967
       }, {
         lat: 34.068729,
         lng: -118.445007
@@ -6156,6 +6229,20 @@ __webpack_require__.r(__webpack_exports__);
         lng: -118.445181
       }]
     };
+  },
+  created: function created() {
+    console.log("hello");
+    this.$store.dispatch("populategoogleapi"); // if(this.photoId){
+    //     this.timer = setInterval(this.photoId, 300000)
+    // }
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+    location: function location(state) {
+      return state.locationPoints;
+    }
+  }), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['photoId'])),
+  mounted: function mounted() {},
+  beforeDestroy: function beforeDestroy() {// clearInterval(this.photoId)
   }
 });
 
@@ -6170,6 +6257,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 //
 //
 //
@@ -6214,17 +6302,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Confirmation',
   data: function data() {
@@ -6251,7 +6329,26 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../components/googleMaps/googleMapApi */ "./resources/js/components/googleMaps/googleMapApi.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../components/googleMaps/googleMapApi */ "./resources/js/components/googleMaps/googleMapApi.vue");
+/* harmony import */ var _components_confirmationModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../components/confirmationModal */ "./resources/js/components/confirmationModal.vue");
+var _methods;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6262,14 +6359,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Landing",
   components: {
-    googleMap: _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__["default"]
+    googleMap: _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_1__["default"],
+    confirmationModal: _components_confirmationModal__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
-    return {};
-  }
+    return {
+      file: null,
+      modal: false,
+      imageData: null,
+      timer: ''
+    };
+  },
+  methods: (_methods = {
+    clickInput: function clickInput() {
+      $("#imgInput").click();
+    },
+    sendImage: function sendImage() {
+      var formData = new FormData();
+      formData.append('photo', this.file);
+      formData.append('lng', 34.073959);
+      formData.append('lat', -118.065181);
+      formData.append('size', 23); // let payload = {
+      // 	photo: url,
+      // 	long: 34.073959,
+      // 	lat : -118.065181,
+      // 	size: 23
+      // };
+
+      this.$store.dispatch('saveImageAPI', formData);
+    }
+  }, _defineProperty(_methods, "clickInput", function clickInput() {
+    this.$refs.fileInput.click();
+  }), _defineProperty(_methods, "storePhoto", function storePhoto() {
+    var _this = this;
+
+    var input = this.$refs.fileInput;
+    var files = input.files;
+
+    if (files && files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        _this.imageData = e.target.result;
+      };
+
+      reader.readAsDataURL(files[0]);
+      this.file = files[0];
+      this.modal = true;
+    }
+  }), _defineProperty(_methods, "closeModal", function closeModal() {
+    this.modal = false;
+    this.imageData = null;
+  }), _methods)
 });
 
 /***/ }),
@@ -6315,6 +6461,7 @@ __webpack_require__.r(__webpack_exports__);
       var mediaStreamTrack = this.mediaStream.getVideoTracks()[0];
       var imageCapture = new window.ImageCapture(mediaStreamTrack);
       return imageCapture.takePhoto().then(function (blob) {
+        console.log(imageCapture);
         console.log(blob);
       });
     }
@@ -42323,6 +42470,107 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/confirmationModal.vue?vue&type=template&id=ddc44e86&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/confirmationModal.vue?vue&type=template&id=ddc44e86& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "modal", attrs: { tabindex: "-1", role: "dialog" } },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "modal-dialog modal-dialog-centered",
+          attrs: { role: "document" }
+        },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-6" }, [
+                  _c("img", {
+                    staticClass: "confirmation__image",
+                    attrs: { src: _vm.imageData, alt: "" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-6" },
+                  [
+                    _c("vue-google-heatmap", {
+                      staticClass: "confirmation__field-heatmap",
+                      attrs: {
+                        points: _vm.trash.location,
+                        height: "100%",
+                        lat: _vm.trash.location[0].lat,
+                        lng: _vm.trash.location[0].lng,
+                        initialZoom: 15
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-dark",
+                  attrs: { type: "button" },
+                  on: { click: _vm.closeModal }
+                },
+                [_vm._v("Cancel")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-dark",
+                  attrs: { type: "button" },
+                  on: { click: _vm.sendImage }
+                },
+                [_vm._v("Confirm")]
+              )
+            ])
+          ])
+        ]
+      )
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h5", { staticClass: "modal-title" }, [_vm._v("Upload this Scrap?")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=template&id=eace0b0a&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/googleMaps/googleMapApi.vue?vue&type=template&id=eace0b0a& ***!
@@ -42373,72 +42621,76 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _vm._m(0),
     _vm._v(" "),
-    _vm._m(1),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-6 text-center" }, [
+        _c("h3", [_vm._v("Scrap Snap")]),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "confirmation__image",
+          attrs: { src: "/images/trash_1.jpg", alt: "" }
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "confirmation__fields-size" }, [
+          _vm._v(
+            "Location: " +
+              _vm._s(_vm.trash.location[0].lat) +
+              " x " +
+              _vm._s(_vm.trash.location[0].lng)
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-6 text-center" },
+        [
+          _c("h3", [_vm._v("Scrap Location")]),
+          _vm._v(" "),
+          _c("vue-google-heatmap", {
+            staticClass: "confirmation__field-heatmap",
+            attrs: {
+              points: _vm.trash.location,
+              height: "100%",
+              lat: _vm.trash.location[0].lat,
+              lng: _vm.trash.location[0].lng,
+              initialZoom: 15
+            }
+          }),
+          _vm._v(" "),
+          _c("p", { staticClass: "confirmation__fields-size" }, [
+            _vm._v("Size: " + _vm._s(_vm.trash.size))
+          ])
+        ],
+        1
+      )
+    ]),
     _vm._v(" "),
-    _c("div", { staticClass: "confirmation__fields" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "text-left" }, [
-            _c("p", { staticClass: "confirmation__fields-size" }, [
-              _vm._v("Size: " + _vm._s(_vm.trash.size))
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "text-left" }, [
-            _c("p", { staticClass: "confirmation__fields-size" }, [
-              _vm._v(
-                "Location: " +
-                  _vm._s(_vm.trash.location[0].lat) +
-                  " x " +
-                  _vm._s(_vm.trash.location[0].lng)
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c(
-            "div",
-            { staticClass: "text-center" },
-            [
-              _c("vue-google-heatmap", {
-                staticClass: "confirmation__field-heatmap",
-                attrs: {
-                  points: _vm.trash.location,
-                  width: 400,
-                  height: 325,
-                  lat: _vm.trash.location[0].lat,
-                  lng: _vm.trash.location[0].lng,
-                  initialZoom: 15
-                }
-              })
-            ],
-            1
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c(
-            "div",
-            { staticClass: "text-center" },
-            [
-              _c(
-                "router-link",
-                { staticClass: "btn btn-dark", attrs: { to: "/" } },
-                [_vm._v("Confirm and Return to Map")]
-              )
-            ],
-            1
-          )
-        ])
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c(
+          "div",
+          { staticClass: "text-center" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "btn btn-dark", attrs: { to: "/" } },
+              [_vm._v("Confirm and Return to Map")]
+            )
+          ],
+          1
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("button", {
+          on: {
+            click: function($event) {
+              return _vm.sendImage()
+            }
+          }
+        })
       ])
     ])
   ])
@@ -42450,23 +42702,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "text-center" }, [
+        _c("div", { staticClass: "text-center mb-3" }, [
           _c("h1", [_vm._v("Confirmation Page")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "text-center" }, [
-          _c("img", {
-            staticClass: "confirmation__image",
-            attrs: { src: "/images/trash_1.jpg", alt: "" }
-          })
         ])
       ])
     ])
@@ -42499,21 +42736,38 @@ var render = function() {
     [
       _c("google-map"),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "scrap-maps__camera text-center" },
-        [
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-dark scrap-maps__camera-button",
-              attrs: { to: "photo" }
-            },
-            [_vm._v("Snap a Photo "), _c("i", { staticClass: "fas fa-camera" })]
-          )
-        ],
-        1
-      )
+      _c("div", { staticClass: "scrap-maps__camera text-center" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-dark scrap-maps__camera-button",
+            on: { click: _vm.clickInput }
+          },
+          [
+            _vm._v("\n\t\t\tSnap a Photo\n\t\t\t"),
+            _c("i", { staticClass: "fas fa-camera" })
+          ]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          ref: "fileInput",
+          staticStyle: { display: "none" },
+          attrs: {
+            type: "file",
+            id: "imgInput",
+            accept: "image/*",
+            capture: "camera"
+          },
+          on: { input: _vm.storePhoto }
+        })
+      ]),
+      _vm._v(" "),
+      _vm.modal
+        ? _c("confirmation-modal", {
+            attrs: { imageData: _vm.imageData },
+            on: { closeModal: _vm.closeModal, sendImage: _vm.sendImage }
+          })
+        : _vm._e()
     ],
     1
   )
@@ -58481,7 +58735,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.js */ "./node_modules/@fortawesome/fontawesome-free/js/all.js");
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: '#app',
+  el: "#app",
   store: _store__WEBPACK_IMPORTED_MODULE_2__["default"],
   router: _js_router_js__WEBPACK_IMPORTED_MODULE_1__["default"],
   render: function render(h) {
@@ -58539,6 +58793,75 @@ if (token) {
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
+
+/***/ }),
+
+/***/ "./resources/js/components/confirmationModal.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/confirmationModal.vue ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _confirmationModal_vue_vue_type_template_id_ddc44e86___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./confirmationModal.vue?vue&type=template&id=ddc44e86& */ "./resources/js/components/confirmationModal.vue?vue&type=template&id=ddc44e86&");
+/* harmony import */ var _confirmationModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./confirmationModal.vue?vue&type=script&lang=js& */ "./resources/js/components/confirmationModal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _confirmationModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _confirmationModal_vue_vue_type_template_id_ddc44e86___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _confirmationModal_vue_vue_type_template_id_ddc44e86___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/confirmationModal.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/confirmationModal.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/confirmationModal.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_confirmationModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./confirmationModal.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/confirmationModal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_confirmationModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/confirmationModal.vue?vue&type=template&id=ddc44e86&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/confirmationModal.vue?vue&type=template&id=ddc44e86& ***!
+  \**************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_confirmationModal_vue_vue_type_template_id_ddc44e86___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./confirmationModal.vue?vue&type=template&id=ddc44e86& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/confirmationModal.vue?vue&type=template&id=ddc44e86&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_confirmationModal_vue_vue_type_template_id_ddc44e86___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_confirmationModal_vue_vue_type_template_id_ddc44e86___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -58637,12 +58960,6 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: [{
     path: '/',
     component: _js_views_Landing__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }, {
-    path: '/photo',
-    component: _js_views_Photo__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }, {
-    path: '/confirmation',
-    component: _js_views_Confirmation__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
@@ -58679,10 +58996,32 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*!******************************************************!*\
   !*** ./resources/js/store/modules/global/actions.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  populategoogleapi: function populategoogleapi(_ref) {
+    var commit = _ref.commit;
+    var path = "/api/trash/all";
+    axios.get(path).then(function (res) {
+      commit("POPULATEGOOGLEAPI", res.data);
+    });
+  },
+  saveImageAPI: function saveImageAPI(_ref2, formData) {
+    var commit = _ref2.commit;
+    axios.post('api/trash', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }).then(function (response) {
+      console.log(response.data);
+    }).catch(function (failure) {
+      return console.error(failure);
+    });
+  }
+});
 
 /***/ }),
 
@@ -58690,10 +59029,20 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*!******************************************************!*\
   !*** ./resources/js/store/modules/global/getters.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  // majorData: state => index => state.majorCards[index].majorData
+  photoId: function photoId(state) {
+    return function (index) {
+      return state.locationsPoints[index].id;
+    };
+  } //  state.locationPoints[Object.keys(state.locationPoints).length].id
 
+});
 
 /***/ }),
 
@@ -58709,20 +59058,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ "./resources/js/store/modules/global/state.js");
 /* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_state__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getters */ "./resources/js/store/modules/global/getters.js");
-/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_getters__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mutations */ "./resources/js/store/modules/global/mutations.js");
-/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_mutations__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions */ "./resources/js/store/modules/global/actions.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_actions__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   state: _state__WEBPACK_IMPORTED_MODULE_0___default.a,
-  getters: _getters__WEBPACK_IMPORTED_MODULE_1___default.a,
-  mutations: _mutations__WEBPACK_IMPORTED_MODULE_2___default.a,
-  actions: _actions__WEBPACK_IMPORTED_MODULE_3___default.a
+  getters: _getters__WEBPACK_IMPORTED_MODULE_1__["default"],
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_2__["default"],
+  actions: _actions__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
 /***/ }),
@@ -58731,10 +59077,20 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************!*\
   !*** ./resources/js/store/modules/global/mutations.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  POPULATEGOOGLEAPI: function POPULATEGOOGLEAPI(state, payload) {
+    console.log(payload);
+    state.locationPoints = payload;
+  },
+  FETCH_PHOTO_INFO: function FETCH_PHOTO_INFO(state, payload) {
+    state.photo = JSON.parse(payload);
+  }
+});
 
 /***/ }),
 
@@ -58745,7 +59101,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-captures: [];
+locationPoints: [];
+
+photo: {}
 
 /***/ }),
 

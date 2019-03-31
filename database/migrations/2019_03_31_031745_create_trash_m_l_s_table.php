@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTashMLSTable extends Migration
+class CreateTrashMLSTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class CreateTashMLSTable extends Migration
     {
         Schema::create('trash_ml_table', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->decimal('lat', 10, 8);
-            $table->decimal('long', 11, 8);
+            $table->decimal('lat', 15, 10);
+            $table->decimal('lng', 15, 10);
             $table->string('size');
             $table->string('url');
             $table->timestamps();
@@ -30,6 +30,6 @@ class CreateTashMLSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tash_m_l_s');
+        Schema::dropIfExists('trash_ml_table');
     }
 }

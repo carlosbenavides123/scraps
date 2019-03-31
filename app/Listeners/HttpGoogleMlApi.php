@@ -34,6 +34,6 @@ class HttpGoogleMlApi implements ShouldQueue
 
         $response = $client->request('POST', $server, $payload);
         // dd($response);
-        $event->broadcastOn();
+        // $event->broadcastOn();
     }
 }

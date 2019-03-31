@@ -15,8 +15,8 @@ class CreateTrashesTable extends Migration
     {
         Schema::create('trashes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->decimal('lat', 10, 8);
-            $table->decimal('long', 11, 8);
+            $table->decimal('lat', 15, 10);
+            $table->decimal('lng', 15, 10);
             $table->string('size');
             $table->string('url');
             $table->timestamps();
