@@ -6372,32 +6372,43 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       file: null,
       modal: false,
       imageData: null,
-      timer: ''
+      timer: '',
+      lng: null,
+      lat: null
     };
+  },
+  created: function created() {
+    var _this = this;
+
+    this.$getLocation({
+      enableHighAccuracy: true,
+      timeout: Infinity
+    }).then(function (coordinates) {
+      _this.lng = coordinates.lng;
+      _this.lat = coordinates.lat;
+    });
   },
   methods: (_methods = {
     clickInput: function clickInput() {
       $("#imgInput").click();
+      console.log("test");
     },
     sendImage: function sendImage() {
       var formData = new FormData();
       formData.append('photo', this.file);
-      formData.append('lng', 34.073959);
-      formData.append('lat', -118.065181);
-      formData.append('size', 23); // let payload = {
-      // 	photo: url,
-      // 	long: 34.073959,
-      // 	lat : -118.065181,
-      // 	size: 23
-      // };
-
+      formData.append('lng', this.lng);
+      formData.append('lat', this.lat);
+      formData.append('size', 23);
       this.$store.dispatch('saveImageAPI', formData);
     }
   }, _defineProperty(_methods, "clickInput", function clickInput() {
+    console.log(this.lat);
     this.$refs.fileInput.click();
+    console.log("test");
   }), _defineProperty(_methods, "storePhoto", function storePhoto() {
-    var _this = this;
+    var _this2 = this;
 
+    console.log("test");
     var input = this.$refs.fileInput;
     var files = input.files;
 
@@ -6405,7 +6416,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var reader = new FileReader();
 
       reader.onload = function (e) {
-        _this.imageData = e.target.result;
+        _this2.imageData = e.target.result;
       };
 
       reader.readAsDataURL(files[0]);
@@ -42162,6 +42173,17 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-browser-geolocation/dist/vue-geolocation.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/vue-browser-geolocation/dist/vue-geolocation.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(o,t){ true?module.exports=t():undefined}(this,function(){return function(o){function t(e){if(n[e])return n[e].exports;var i=n[e]={i:e,l:!1,exports:{}};return o[e].call(i.exports,i,i.exports,t),i.l=!0,i.exports}var n={};return t.m=o,t.c=n,t.i=function(o){return o},t.d=function(o,n,e){t.o(o,n)||Object.defineProperty(o,n,{configurable:!1,enumerable:!0,get:e})},t.n=function(o){var n=o&&o.__esModule?function(){return o.default}:function(){return o};return t.d(n,"a",n),n},t.o=function(o,t){return Object.prototype.hasOwnProperty.call(o,t)},t.p="",t(t.s=0)}([function(o,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var e={install:function(o){o.prototype.$getLocation=e.getLocation,o.prototype.$watchLocation=e.watchLocation,o.prototype.$clearLocationWatch=e.clearLocation},getLocation:function(){var o=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return new Promise(function(t,n){e._isAvailable()?window.navigator.geolocation.getCurrentPosition(function(o){t({lat:o.coords.latitude,lng:o.coords.longitude})},function(){n("no position access")},o):n("no browser support")})},watchLocation:function(){var o=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return new Promise(function(t,n){e._isAvailable()?window.navigator.geolocation.watchPosition(function(o){t({lat:o.coords.latitude,lng:o.coords.longitude})},function(){n("no position access")},o):n("no browser support")})},clearLocation:function(o){return new Promise(function(t,n){e._isAvailable()?o?t(window.navigator.geolocation.clearWatch(o)):n("please provide watchID"):n("no browser support")})},_isAvailable:function(){return"geolocation"in window.navigator}};t.default=e,"undefined"!=typeof window&&window.Vue&&window.Vue.use(e)}])});
+
+/***/ }),
+
 /***/ "./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue":
 /*!******************************************************************!*\
   !*** ./node_modules/vue-google-heatmap/src/VueGoogleHeatmap.vue ***!
@@ -58979,9 +59001,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _modules_global__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/global */ "./resources/js/store/modules/global/index.js");
+/* harmony import */ var vue_browser_geolocation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-browser-geolocation */ "./node_modules/vue-browser-geolocation/dist/vue-geolocation.js");
+/* harmony import */ var vue_browser_geolocation__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_browser_geolocation__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_browser_geolocation__WEBPACK_IMPORTED_MODULE_3___default.a);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   strict: "development" !== 'production',
@@ -59350,8 +59376,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/carlosbenavides/development/scraps/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/carlosbenavides/development/scraps/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

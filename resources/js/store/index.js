@@ -3,6 +3,9 @@ import Vuex from 'vuex';
 
 import Global from './modules/global';
 
+import VueGeolocation from 'vue-browser-geolocation';
+Vue.use(VueGeolocation);
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({

@@ -35,33 +35,45 @@ export default {
 			file: null,
 			modal: false,
             imageData: null,
-            timer:''
+			timer:'',
+			lng: null,
+			lat: null
 		};
-    },
+	},
+	created(){
+		this.$getLocation({
+				enableHighAccuracy: true,
+				timeout: Infinity
+		}).then(coordinates => {
+			this.lng = coordinates.lng;
+			this.lat = coordinates.lat;
+		});
+	},
 	methods: {
 		clickInput() {
 			$("#imgInput").click();
+						console.log("test")
+
 		},
 		sendImage() {
             let formData = new FormData()
 			formData.append('photo', this.file)
-			formData.append('lng', 34.073959)
-			formData.append('lat', -118.065181)
+			formData.append('lng', this.lng)
+			formData.append('lat', this.lat)
 			formData.append('size', 23)
 
-			// let payload = {
-			// 	photo: url,
-			// 	long: 34.073959,
-			// 	lat : -118.065181,
-			// 	size: 23
-			// };
 			this.$store.dispatch('saveImageAPI', formData);
 		},
 		clickInput() {
+			console.log(this.lat);
 			this.$refs.fileInput.click();
+						console.log("test")
+
 		},
 
 		storePhoto() {
+						console.log("test")
+
 			const input = this.$refs.fileInput;
 			const files = input.files;
 			if (files && files[0]) {

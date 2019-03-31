@@ -5383,6 +5383,13 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-browser-geolocation@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/vue-browser-geolocation/-/vue-browser-geolocation-1.5.0.tgz#bbae3a01e8066c5526b921d7762aca8866cfd16f"
+  integrity sha512-VLKwm9jpRkg5jpjQDRE89djNiXhmhhzBXX4FUAsTl5QsO+H3z4a5GRaLmtHFdgdoXRUgaSmZFLnoxCajZTIdHg==
+  dependencies:
+    vue "^2.0.1"
+
 vue-google-heatmap@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/vue-google-heatmap/-/vue-google-heatmap-1.0.1.tgz#4c089753cb6d5c94e04a04f83c99b3caeeff4898"
@@ -5425,7 +5432,7 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
 
-vue@^2.5.17:
+vue@^2.0.1, vue@^2.5.17:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
 
