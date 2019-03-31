@@ -44,17 +44,21 @@ export default {
 		};
 	},
 	created() {
-		this.$getLocation({
-			enableHighAccuracy: true,
-			timeout: Infinity
-		}).then(coordinates => {
-			this.$store.dispatch("setCoord", {
-				// lng: coordinates.lng,
-				// lat: coordinates.lat
-				lng: -118.445183,
-				lat: 34.06892
-			});
+		this.$store.dispatch("setCoord", {
+			lng: -118.445183,
+			lat: 34.06892
 		});
+		// this.$getLocation({
+		// 	enableHighAccuracy: true,
+		// 	timeout: Infinity
+		// }).then(coordinates => {
+		// 	this.$store.dispatch("setCoord", {
+		// 		// lng: coordinates.lng,
+		// 		// lat: coordinates.lat
+		// 		lng: -118.445183,
+		// 		lat: 34.06892
+		// 	});
+		// });
 	},
 	computed: {
 		...mapGetters(["currentCoord"])

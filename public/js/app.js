@@ -6247,19 +6247,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   created: function created() {
-    var _this = this;
-
-    this.$getLocation({
-      enableHighAccuracy: true,
-      timeout: Infinity
-    }).then(function (coordinates) {
-      _this.$store.dispatch("setCoord", {
-        // lng: coordinates.lng,
-        // lat: coordinates.lat
-        lng: -118.445183,
-        lat: 34.06892
-      });
-    });
+    this.$store.dispatch("setCoord", {
+      lng: -118.445183,
+      lat: 34.06892
+    }); // this.$getLocation({
+    // 	enableHighAccuracy: true,
+    // 	timeout: Infinity
+    // }).then(coordinates => {
+    // 	this.$store.dispatch("setCoord", {
+    // 		// lng: coordinates.lng,
+    // 		// lat: coordinates.lat
+    // 		lng: -118.445183,
+    // 		lat: 34.06892
+    // 	});
+    // });
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(["currentCoord"])),
   methods: (_methods = {
@@ -6277,7 +6278,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }, _defineProperty(_methods, "clickInput", function clickInput() {
     this.$refs.fileInput.click();
   }), _defineProperty(_methods, "storePhoto", function storePhoto() {
-    var _this2 = this;
+    var _this = this;
 
     var input = this.$refs.fileInput;
     var files = input.files;
@@ -6286,7 +6287,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var reader = new FileReader();
 
       reader.onload = function (e) {
-        _this2.imageData = e.target.result;
+        _this.imageData = e.target.result;
       };
 
       reader.readAsDataURL(files[0]);
