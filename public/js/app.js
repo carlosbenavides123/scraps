@@ -6360,14 +6360,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     sendImage: function sendImage() {
       var formData = new FormData();
-      formData.append('file', this.file);
-      var payload = {
-        photo: formData,
-        long: 34.073959,
-        lat: -118.065181,
-        size: 23
-      };
-      this.$store.dispatch('saveImageAPI', payload);
+      formData.append('photo', this.file);
+      formData.append('long', 34.073959);
+      formData.append('lat', -118.065181);
+      formData.append('size', 23); // let payload = {
+      // 	photo: url,
+      // 	long: 34.073959,
+      // 	lat: -118.065181,
+      // 	size: 23
+      // };
+
+      this.$store.dispatch('saveImageAPI', formData);
     }
   }, _defineProperty(_methods, "clickInput", function clickInput() {
     this.$refs.fileInput.click();
@@ -58978,14 +58981,14 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  saveImageAPI: function saveImageAPI(_ref, payload) {
+  saveImageAPI: function saveImageAPI(_ref, formData) {
     var commit = _ref.commit;
-    axios.post('api/trash', payload, {
+    axios.post('api/trash', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
     }).then(function (response) {
-      console.log(response);
+      console.log(response.data);
     }).catch(function (failure) {
       return console.error(failure);
     });
@@ -59304,8 +59307,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/mike/Development/hackathons/scraps/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/mike/Development/hackathons/scraps/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
