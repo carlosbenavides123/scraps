@@ -16,7 +16,7 @@
 				@input="storePhoto"
 			>
 		</div>
-		<confirmation-modal v-if="modal" @closeModal="closeModal" :imageData="imageData"/>
+		<confirmation-modal v-if="modal" @closeModal="closeModal" @sendImage="sendImage" :imageData="imageData"/>
 	</div>
 </template>
 
@@ -32,27 +32,25 @@ export default {
 	},
 	data() {
 		return {
-			file: "",
+			file: null,
 			modal: false,
 			imageData: null
 		};
 	},
 	methods: {
-        ...mapActions(["saveImageAPI"]),
 		clickInput() {
 			$("#imgInput").click();
 		},
-		sendImage: function() {
+		sendImage() {
+            let formData = new FormData()
+            formData.append('file', this.file)
 			let payload = {
-				photo: "/images/trash_1.jpg",
-				// photo: 'trash_1.jpg',
-				// photo: 'http://localhost:8080/images/trash_1.jpg',
+				photo: formData,
 				long: 34.073959,
 				lat: -118.065181,
 				size: 23
 			};
-			this.saveImageAPI(payload);
-			console.log("hit");
+			this.$store.dispatch('saveImageAPI', payload);
 		},
 		clickInput() {
 			this.$refs.fileInput.click();
@@ -67,9 +65,9 @@ export default {
 					this.imageData = e.target.result;
 				};
 				reader.readAsDataURL(files[0]);
-				console.log(files[0]);
+                this.file = files[0];
+                this.modal = true;
 			}
-			this.modal = true;
 		},
 
 		closeModal() {

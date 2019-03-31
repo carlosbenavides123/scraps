@@ -6132,6 +6132,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     closeModal: function closeModal() {
       this.$emit('closeModal');
+    },
+    sendImage: function sendImage() {
+      this.$emit('sendImage');
+      this.$emit('closeModal');
     }
   }
 });
@@ -6305,15 +6309,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../components/googleMaps/googleMapApi */ "./resources/js/components/googleMaps/googleMapApi.vue");
-<<<<<<< HEAD
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../components/googleMaps/googleMapApi */ "./resources/js/components/googleMaps/googleMapApi.vue");
+/* harmony import */ var _components_confirmationModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../components/confirmationModal */ "./resources/js/components/confirmationModal.vue");
+var _methods;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-=======
-/* harmony import */ var _components_confirmationModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../components/confirmationModal */ "./resources/js/components/confirmationModal.vue");
 //
 //
 //
@@ -6324,7 +6326,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
->>>>>>> dev
 //
 //
 //
@@ -6343,60 +6344,54 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Landing",
   components: {
-    googleMap: _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__["default"],
-    confirmationModal: _components_confirmationModal__WEBPACK_IMPORTED_MODULE_1__["default"]
+    googleMap: _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_1__["default"],
+    confirmationModal: _components_confirmationModal__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
-<<<<<<< HEAD
-      file: ''
-=======
+      file: null,
       modal: false,
       imageData: null
->>>>>>> dev
     };
   },
-  methods: _objectSpread({
+  methods: (_methods = {
     clickInput: function clickInput() {
-      this.$refs.fileInput.click();
+      $("#imgInput").click();
     },
-    storePhoto: function storePhoto() {
-      var _this = this;
-
-      var input = this.$refs.fileInput;
-      var files = input.files;
-
-      if (files && files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-          _this.imageData = e.target.result;
-        };
-
-        reader.readAsDataURL(files[0]);
-        console.log(files[0]);
-      }
-
-      this.modal = true;
-    },
-    closeModal: function closeModal() {
-      this.modal = false;
-      this.imageData = null;
-    }
-  }, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['saveImageAPI']), {
     sendImage: function sendImage() {
+      var formData = new FormData();
+      formData.append('file', this.file);
       var payload = {
-        photo: '/images/trash_1.jpg',
-        // photo: 'trash_1.jpg',
-        // photo: 'http://localhost:8080/images/trash_1.jpg',
+        photo: formData,
         long: 34.073959,
         lat: -118.065181,
         size: 23
       };
-      this.saveImageAPI(payload);
-      console.log("hit");
+      this.$store.dispatch('saveImageAPI', payload);
     }
-  })
+  }, _defineProperty(_methods, "clickInput", function clickInput() {
+    this.$refs.fileInput.click();
+  }), _defineProperty(_methods, "storePhoto", function storePhoto() {
+    var _this = this;
+
+    var input = this.$refs.fileInput;
+    var files = input.files;
+
+    if (files && files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        _this.imageData = e.target.result;
+      };
+
+      reader.readAsDataURL(files[0]);
+      this.file = files[0];
+      this.modal = true;
+    }
+  }), _defineProperty(_methods, "closeModal", function closeModal() {
+    this.modal = false;
+    this.imageData = null;
+  }), _methods)
 });
 
 /***/ }),
@@ -42522,7 +42517,11 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "button",
-                { staticClass: "btn btn-dark", attrs: { type: "button" } },
+                {
+                  staticClass: "btn btn-dark",
+                  attrs: { type: "button" },
+                  on: { click: _vm.sendImage }
+                },
                 [_vm._v("Confirm")]
               )
             ])
@@ -42727,11 +42726,7 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("input", {
-<<<<<<< HEAD
-          ref: "file",
-=======
           ref: "fileInput",
->>>>>>> dev
           staticStyle: { display: "none" },
           attrs: {
             type: "file",
@@ -42746,7 +42741,7 @@ var render = function() {
       _vm.modal
         ? _c("confirmation-modal", {
             attrs: { imageData: _vm.imageData },
-            on: { closeModal: _vm.closeModal }
+            on: { closeModal: _vm.closeModal, sendImage: _vm.sendImage }
           })
         : _vm._e()
     ],
@@ -58985,14 +58980,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   saveImageAPI: function saveImageAPI(_ref, payload) {
     var commit = _ref.commit;
-    console.log(payload.photo);
-    axios.post('api/trash', {
-      photo: payload.photo,
-      long: payload.long,
-      lat: payload.lat,
-      size: payload.size
+    axios.post('api/trash', payload, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
     }).then(function (response) {
-      console.log(response); // commit('FETCH_PHOTO_INFO', response.config.data)
+      console.log(response);
     }).catch(function (failure) {
       return console.error(failure);
     });
@@ -59311,8 +59304,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

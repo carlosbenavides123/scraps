@@ -24,7 +24,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-outline-dark" @click="closeModal">Cancel</button>
-					<button type="button" class="btn btn-dark">Confirm</button>
+					<button type="button" class="btn btn-dark" @click="sendImage">Confirm</button>
 				</div>
 			</div>
 		</div>
@@ -43,6 +43,10 @@ export default {
     },
     methods: {
         closeModal() {
+            this.$emit('closeModal')
+        },
+        sendImage() {
+            this.$emit('sendImage')
             this.$emit('closeModal')
         }
     }
