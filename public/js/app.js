@@ -6248,7 +6248,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['saveImageAPI']), {
     sendImage: function sendImage(data) {
       var payload = {
-        photo: '/images/trash_1.jpg',
+        photo: './../../../public/images/trash_1.jpg',
         long: 34.073959,
         lat: -118.065181,
         size: 23
@@ -58716,14 +58716,15 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  saveImageAPI: function saveImageAPI(payload) {
-    axios.post('api/saveTrash/', {
+  saveImageAPI: function saveImageAPI(_ref, payload) {
+    var commit = _ref.commit;
+    axios.post('api/trash/', {
       photo: payload.photo,
       long: payload.long,
       lat: payload.lat,
       size: payload.size
     }).then(function (response) {
-      console.log(response);
+      commit('FETCH_PHOTO_INFO', response.config.data);
     }).catch(function (failure) {
       return console.error(failure);
     });
@@ -58757,7 +58758,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getters */ "./resources/js/store/modules/global/getters.js");
 /* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_getters__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mutations */ "./resources/js/store/modules/global/mutations.js");
-/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_mutations__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions */ "./resources/js/store/modules/global/actions.js");
 
 
@@ -58766,7 +58766,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   state: _state__WEBPACK_IMPORTED_MODULE_0___default.a,
   getters: _getters__WEBPACK_IMPORTED_MODULE_1___default.a,
-  mutations: _mutations__WEBPACK_IMPORTED_MODULE_2___default.a,
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_2__["default"],
   actions: _actions__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
@@ -58776,10 +58776,16 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************!*\
   !*** ./resources/js/store/modules/global/mutations.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  FETCH_PHOTO_INFO: function FETCH_PHOTO_INFO(state, payload) {
+    state.photo = JSON.parse(payload);
+  }
+});
 
 /***/ }),
 
@@ -58790,7 +58796,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-captures: [];
+photo: {}
 
 /***/ }),
 

@@ -76,7 +76,7 @@ export default {
         ),
         sendImage: function(data){
             let payload = {
-                photo: '/images/trash_1.jpg',
+                photo: './../../../public/images/trash_1.jpg',
                 long: 34.073959,
                 lat: -118.065181,
                 size: 23
