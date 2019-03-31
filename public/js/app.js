@@ -6214,23 +6214,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Confirmation',
@@ -6282,6 +6265,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Landing",
@@ -6290,6 +6274,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {};
+  },
+  methods: {
+    clickInput: function clickInput() {
+      $("#imgInput").click();
+    }
   }
 });
 
@@ -6336,6 +6325,7 @@ __webpack_require__.r(__webpack_exports__);
       var mediaStreamTrack = this.mediaStream.getVideoTracks()[0];
       var imageCapture = new window.ImageCapture(mediaStreamTrack);
       return imageCapture.takePhoto().then(function (blob) {
+        console.log(imageCapture);
         console.log(blob);
       });
     }
@@ -42394,84 +42384,64 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _vm._m(0),
     _vm._v(" "),
-    _vm._m(1),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-6 text-center" }, [
+        _c("h3", [_vm._v("Scrap Snap")]),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "confirmation__image",
+          attrs: { src: "/images/trash_1.jpg", alt: "" }
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "confirmation__fields-size" }, [
+          _vm._v(
+            "Location: " +
+              _vm._s(_vm.trash.location[0].lat) +
+              " x " +
+              _vm._s(_vm.trash.location[0].lng)
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-6 text-center" },
+        [
+          _c("h3", [_vm._v("Scrap Location")]),
+          _vm._v(" "),
+          _c("vue-google-heatmap", {
+            staticClass: "confirmation__field-heatmap",
+            attrs: {
+              points: _vm.trash.location,
+              height: "100%",
+              lat: _vm.trash.location[0].lat,
+              lng: _vm.trash.location[0].lng,
+              initialZoom: 15
+            }
+          }),
+          _vm._v(" "),
+          _c("p", { staticClass: "confirmation__fields-size" }, [
+            _vm._v("Size: " + _vm._s(_vm.trash.size))
+          ])
+        ],
+        1
+      )
+    ]),
     _vm._v(" "),
-    _c("div", { staticClass: "confirmation__fields" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "text-left" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c(
+          "div",
+          { staticClass: "text-center" },
+          [
             _c(
-              "button",
-              {
-                on: {
-                  click: function($event) {
-                    return _vm.sendImage()
-                  }
-                }
-              },
-              [_vm._v("Post Image")]
-            ),
-            _vm._v(" "),
-            _c("p", { staticClass: "confirmation__fields-size" }, [
-              _vm._v("Size: " + _vm._s(_vm.trash.size))
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "text-left" }, [
-            _c("p", { staticClass: "confirmation__fields-size" }, [
-              _vm._v(
-                "Location: " +
-                  _vm._s(_vm.trash.location[0].lat) +
-                  " x " +
-                  _vm._s(_vm.trash.location[0].lng)
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c(
-            "div",
-            { staticClass: "text-center" },
-            [
-              _c("vue-google-heatmap", {
-                staticClass: "confirmation__field-heatmap",
-                attrs: {
-                  points: _vm.trash.location,
-                  width: 400,
-                  height: 325,
-                  lat: _vm.trash.location[0].lat,
-                  lng: _vm.trash.location[0].lng,
-                  initialZoom: 15
-                }
-              })
-            ],
-            1
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c(
-            "div",
-            { staticClass: "text-center" },
-            [
-              _c(
-                "router-link",
-                { staticClass: "btn btn-dark", attrs: { to: "/" } },
-                [_vm._v("Confirm and Return to Map")]
-              )
-            ],
-            1
-          )
-        ])
+              "router-link",
+              { staticClass: "btn btn-dark", attrs: { to: "/" } },
+              [_vm._v("Confirm and Return to Map")]
+            )
+          ],
+          1
+        )
       ])
     ])
   ])
@@ -42483,23 +42453,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "text-center" }, [
+        _c("div", { staticClass: "text-center mb-3" }, [
           _c("h1", [_vm._v("Confirmation Page")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "text-center" }, [
-          _c("img", {
-            staticClass: "confirmation__image",
-            attrs: { src: "/images/trash_1.jpg", alt: "" }
-          })
         ])
       ])
     ])
@@ -42532,21 +42487,26 @@ var render = function() {
     [
       _c("google-map"),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "scrap-maps__camera text-center" },
-        [
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-dark scrap-maps__camera-button",
-              attrs: { to: "photo" }
-            },
-            [_vm._v("Snap a Photo "), _c("i", { staticClass: "fas fa-camera" })]
-          )
-        ],
-        1
-      )
+      _c("div", { staticClass: "scrap-maps__camera text-center" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-dark scrap-maps__camera-button",
+            on: { click: _vm.clickInput }
+          },
+          [_vm._v("Snap a Photo "), _c("i", { staticClass: "fas fa-camera" })]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticStyle: { display: "none" },
+          attrs: {
+            type: "file",
+            id: "imgInput",
+            accept: "image/*",
+            capture: "camera"
+          }
+        })
+      ])
     ],
     1
   )
@@ -58670,10 +58630,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: [{
     path: '/',
     component: _js_views_Landing__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }, {
-    path: '/photo',
-    component: _js_views_Photo__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }, {
+  }, // { path: '/photo', component: Photo},
+  {
     path: '/confirmation',
     component: _js_views_Confirmation__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]

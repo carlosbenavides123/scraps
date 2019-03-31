@@ -11,7 +11,7 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         { path: '/', component: Landing },
-        { path: '/photo', component: Photo},
+        // { path: '/photo', component: Photo},
         { path: '/confirmation', component: Confirmation}
     ]
 });
