@@ -6132,6 +6132,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     closeModal: function closeModal() {
       this.$emit('closeModal');
+    },
+    sendImage: function sendImage() {
+      this.$emit('sendImage');
+      this.$emit('closeModal');
     }
   }
 });
@@ -6233,6 +6237,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 //
 //
 //
@@ -6272,12 +6277,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Confirmation",
+  name: 'Confirmation',
   data: function data() {
     return {
       trash: {
-        size: "large",
+        size: 'large',
         location: [{
           lat: 34.828921,
           lng: -118.943481
@@ -6298,8 +6309,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../components/googleMaps/googleMapApi */ "./resources/js/components/googleMaps/googleMapApi.vue");
-/* harmony import */ var _components_confirmationModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../components/confirmationModal */ "./resources/js/components/confirmationModal.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../components/googleMaps/googleMapApi */ "./resources/js/components/googleMaps/googleMapApi.vue");
+/* harmony import */ var _components_confirmationModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../components/confirmationModal */ "./resources/js/components/confirmationModal.vue");
+var _methods;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6322,48 +6338,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Landing",
   components: {
-    googleMap: _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__["default"],
-    confirmationModal: _components_confirmationModal__WEBPACK_IMPORTED_MODULE_1__["default"]
+    googleMap: _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_1__["default"],
+    confirmationModal: _components_confirmationModal__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
+      file: null,
       modal: false,
       imageData: null
     };
   },
-  methods: {
+  methods: (_methods = {
     clickInput: function clickInput() {
-      this.$refs.fileInput.click();
+      $("#imgInput").click();
     },
-    storePhoto: function storePhoto() {
-      var _this = this;
+    sendImage: function sendImage() {
+      var formData = new FormData();
+      formData.append('photo', this.file);
+      formData.append('long', 34.073959);
+      formData.append('lat', -118.065181);
+      formData.append('size', 23); // let payload = {
+      // 	photo: url,
+      // 	long: 34.073959,
+      // 	lat: -118.065181,
+      // 	size: 23
+      // };
 
-      var input = this.$refs.fileInput;
-      var files = input.files;
-
-      if (files && files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-          _this.imageData = e.target.result;
-        };
-
-        reader.readAsDataURL(files[0]);
-        console.log(files[0]);
-      }
-
-      this.modal = true;
-    },
-    closeModal: function closeModal() {
-      this.modal = false;
-      this.imageData = null;
+      this.$store.dispatch('saveImageAPI', formData);
     }
-  }
+  }, _defineProperty(_methods, "clickInput", function clickInput() {
+    this.$refs.fileInput.click();
+  }), _defineProperty(_methods, "storePhoto", function storePhoto() {
+    var _this = this;
+
+    var input = this.$refs.fileInput;
+    var files = input.files;
+
+    if (files && files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        _this.imageData = e.target.result;
+      };
+
+      reader.readAsDataURL(files[0]);
+      this.file = files[0];
+      this.modal = true;
+    }
+  }), _defineProperty(_methods, "closeModal", function closeModal() {
+    this.modal = false;
+    this.imageData = null;
+  }), _methods)
 });
 
 /***/ }),
@@ -42489,7 +42520,11 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "button",
-                { staticClass: "btn btn-dark", attrs: { type: "button" } },
+                {
+                  staticClass: "btn btn-dark",
+                  attrs: { type: "button" },
+                  on: { click: _vm.sendImage }
+                },
                 [_vm._v("Confirm")]
               )
             ])
@@ -42624,6 +42659,18 @@ var render = function() {
           1
         )
       ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("button", {
+          on: {
+            click: function($event) {
+              return _vm.sendImage()
+            }
+          }
+        })
+      ])
     ])
   ])
 }
@@ -42697,7 +42744,7 @@ var render = function() {
       _vm.modal
         ? _c("confirmation-modal", {
             attrs: { imageData: _vm.imageData },
-            on: { closeModal: _vm.closeModal }
+            on: { closeModal: _vm.closeModal, sendImage: _vm.sendImage }
           })
         : _vm._e()
     ],
@@ -58928,10 +58975,25 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*!******************************************************!*\
   !*** ./resources/js/store/modules/global/actions.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  saveImageAPI: function saveImageAPI(_ref, formData) {
+    var commit = _ref.commit;
+    axios.post('api/trash', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }).then(function (response) {
+      console.log(response.data);
+    }).catch(function (failure) {
+      return console.error(failure);
+    });
+  }
+});
 
 /***/ }),
 
@@ -58960,9 +59022,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getters */ "./resources/js/store/modules/global/getters.js");
 /* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_getters__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mutations */ "./resources/js/store/modules/global/mutations.js");
-/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_mutations__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions */ "./resources/js/store/modules/global/actions.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_actions__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -58970,8 +59030,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   state: _state__WEBPACK_IMPORTED_MODULE_0___default.a,
   getters: _getters__WEBPACK_IMPORTED_MODULE_1___default.a,
-  mutations: _mutations__WEBPACK_IMPORTED_MODULE_2___default.a,
-  actions: _actions__WEBPACK_IMPORTED_MODULE_3___default.a
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_2__["default"],
+  actions: _actions__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
 /***/ }),
@@ -58980,10 +59040,16 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************!*\
   !*** ./resources/js/store/modules/global/mutations.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  FETCH_PHOTO_INFO: function FETCH_PHOTO_INFO(state, payload) {
+    state.photo = JSON.parse(payload);
+  }
+});
 
 /***/ }),
 
@@ -58994,7 +59060,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-captures: [];
+photo: {}
 
 /***/ }),
 
@@ -59241,8 +59307,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/mike/Development/hackathons/scraps/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/mike/Development/hackathons/scraps/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

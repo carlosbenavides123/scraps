@@ -16,11 +16,12 @@
 				@input="storePhoto"
 			>
 		</div>
-		<confirmation-modal v-if="modal" @closeModal="closeModal" :imageData="imageData"/>
+		<confirmation-modal v-if="modal" @closeModal="closeModal" @sendImage="sendImage" :imageData="imageData"/>
 	</div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import googleMap from "./../components/googleMaps/googleMapApi";
 import confirmationModal from "./../components/confirmationModal";
 export default {
@@ -31,11 +32,30 @@ export default {
 	},
 	data() {
 		return {
-            modal: false,
+			file: null,
+			modal: false,
 			imageData: null
 		};
 	},
 	methods: {
+		clickInput() {
+			$("#imgInput").click();
+		},
+		sendImage() {
+            let formData = new FormData()
+			formData.append('photo', this.file)
+			formData.append('long', 34.073959)
+			formData.append('lat', -118.065181)
+			formData.append('size', 23)
+			
+			// let payload = {
+			// 	photo: url,
+			// 	long: 34.073959,
+			// 	lat: -118.065181,
+			// 	size: 23
+			// };
+			this.$store.dispatch('saveImageAPI', formData);
+		},
 		clickInput() {
 			this.$refs.fileInput.click();
 		},
@@ -49,15 +69,15 @@ export default {
 					this.imageData = e.target.result;
 				};
 				reader.readAsDataURL(files[0]);
-                console.log(files[0])
-            }
-            this.modal = true;
-        },
+                this.file = files[0];
+                this.modal = true;
+			}
+		},
 
-        closeModal() {
-            this.modal = false;
-            this.imageData = null;
-        }
+		closeModal() {
+			this.modal = false;
+			this.imageData = null;
+		}
 	}
 };
 </script>
