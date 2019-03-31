@@ -13,10 +13,11 @@ export default {
                 'Content-Type': 'multipart/form-data'
             }
         }
-        ).then(response => {
-            console.log(response.data);
-        }).catch(
+        ).catch(
             failure => console.error(failure)
         )
+    },
+    setCoord({commit}, payload){
+        commit('SET_COORD', payload)
     }
 };

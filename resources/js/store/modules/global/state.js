@@ -1,2 +1,5 @@
-locationPoints: []
-photo: {}
+export default {
+    locationPoints: [],
+    photo: {},
+    currentCoord: {}
+}

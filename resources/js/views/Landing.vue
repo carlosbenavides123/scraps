@@ -16,12 +16,17 @@
 				@input="storePhoto"
 			>
 		</div>
-		<confirmation-modal v-if="modal" @closeModal="closeModal" @sendImage="sendImage" :imageData="imageData"/>
+		<confirmation-modal
+			v-if="modal"
+			@closeModal="closeModal"
+			@sendImage="sendImage"
+			:imageData="imageData"
+		/>
 	</div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import googleMap from "./../components/googleMaps/googleMapApi";
 import confirmationModal from "./../components/confirmationModal";
 export default {
@@ -34,28 +39,38 @@ export default {
 		return {
 			file: null,
 			modal: false,
-            imageData: null,
-            timer:''
+			imageData: null,
+			timer: "",
 		};
+	},
+	created() {
+		this.$getLocation({
+			enableHighAccuracy: true,
+			timeout: Infinity
+		}).then(coordinates => {
+			this.$store.dispatch("setCoord", {
+				lng: coordinates.lng,
+				lat: coordinates.lat
+			});
+		});
+    },
+    computed: {
+        ...mapGetters([
+            'currentCoord'
+        ])
     },
 	methods: {
 		clickInput() {
 			$("#imgInput").click();
 		},
 		sendImage() {
-            let formData = new FormData()
-			formData.append('photo', this.file)
-			formData.append('lng', 34.073959)
-			formData.append('lat', -118.065181)
-			formData.append('size', 23)
+			let formData = new FormData();
+			formData.append("photo", this.file);
+			formData.append("lng", this.currentCoord.lng);
+			formData.append("lat", this.currentCoord.lat);
+			formData.append("size", 23);
 
-			// let payload = {
-			// 	photo: url,
-			// 	long: 34.073959,
-			// 	lat : -118.065181,
-			// 	size: 23
-			// };
-			this.$store.dispatch('saveImageAPI', formData);
+			this.$store.dispatch("saveImageAPI", formData);
 		},
 		clickInput() {
 			this.$refs.fileInput.click();
@@ -70,8 +85,8 @@ export default {
 					this.imageData = e.target.result;
 				};
 				reader.readAsDataURL(files[0]);
-                this.file = files[0];
-                this.modal = true;
+				this.file = files[0];
+				this.modal = true;
 			}
 		},
 
