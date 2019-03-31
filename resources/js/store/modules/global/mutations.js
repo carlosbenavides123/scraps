@@ -1,6 +1,5 @@
 export default {
     POPULATEGOOGLEAPI(state, payload) {
-        console.log(payload);
         state.locationPoints = payload;
     },
 

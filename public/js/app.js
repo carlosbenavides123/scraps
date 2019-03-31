@@ -6175,73 +6175,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       ucla: {
         lat: 34.068921,
         lng: -118.445181
-      },
-      points: [{
-        lat: 34.068921,
-        lng: -118.445181
-      }, {
-        lat: 34.0625,
-        lng: -118.44802
-      }, {
-        lat: 34.06303,
-        lng: -118.44799
-      }, {
-        lat: 33.068952,
-        lng: -127.445181
-      }, {
-        lat: 34.068959,
-        lng: -118.045181
-      }, {
-        lat: 34.0713,
-        lng: -118.43967
-      }, {
-        lat: 34.07524,
-        lng: -118.44444
-      }, {
-        lat: 34.06919,
-        lng: -118.44514
-      }, {
-        lat: 34.07019,
-        lng: -118.55514
-      }, {
-        lat: 34.06483,
-        lng: -118.44437
-      }, {
-        lat: 34.0713,
-        lng: -118.63967
-      }, {
-        lat: 34.068729,
-        lng: -118.445007
-      }, {
-        lat: 34.088729,
-        lng: -118.445007
-      }, {
-        lat: 34.128729,
-        lng: -118.445007
-      }, {
-        lat: 34.168921,
-        lng: -119.445181
-      }, {
-        lat: 34.072921,
-        lng: -118.475181
-      }, {
-        lat: 34.068921,
-        lng: -118.445181
-      }]
+      }
     };
   },
   created: function created() {
-    console.log("hello");
-    this.$store.dispatch("populategoogleapi"); // if(this.photoId){
-    //     this.timer = setInterval(this.photoId, 300000)
-    // }
+    var _this = this;
+
+    this.$store.dispatch("populategoogleapi");
+    this.interval = setInterval(function () {
+      return _this.loadData();
+    }, 12000);
   },
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
-    location: function location(state) {
-      return state.locationPoints;
-    }
-  }), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['photoId'])),
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['locationPoints', 'photoId'])),
   mounted: function mounted() {},
+  methods: {
+    loadData: function loadData() {
+      this.$store.dispatch("populategoogleapi");
+    }
+  },
   beforeDestroy: function beforeDestroy() {// clearInterval(this.photoId)
   }
 });
@@ -42588,7 +42539,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("vue-google-heatmap", {
     attrs: {
-      points: _vm.points,
+      points: _vm.locationPoints,
       height: "93vh",
       lat: _vm.ucla.lat,
       lng: _vm.ucla.lng,
@@ -59036,6 +58987,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   // majorData: state => index => state.majorCards[index].majorData
+  locationPoints: function locationPoints(state) {
+    return state.locationPoints;
+  },
   photoId: function photoId(state) {
     return function (index) {
       return state.locationsPoints[index].id;
@@ -59056,7 +59010,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ "./resources/js/store/modules/global/state.js");
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_state__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getters */ "./resources/js/store/modules/global/getters.js");
 /* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mutations */ "./resources/js/store/modules/global/mutations.js");
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions */ "./resources/js/store/modules/global/actions.js");
@@ -59065,7 +59018,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  state: _state__WEBPACK_IMPORTED_MODULE_0___default.a,
+  state: _state__WEBPACK_IMPORTED_MODULE_0__["default"],
   getters: _getters__WEBPACK_IMPORTED_MODULE_1__["default"],
   mutations: _mutations__WEBPACK_IMPORTED_MODULE_2__["default"],
   actions: _actions__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -59084,7 +59037,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   POPULATEGOOGLEAPI: function POPULATEGOOGLEAPI(state, payload) {
-    console.log(payload);
     state.locationPoints = payload;
   },
   FETCH_PHOTO_INFO: function FETCH_PHOTO_INFO(state, payload) {
@@ -59098,12 +59050,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************!*\
   !*** ./resources/js/store/modules/global/state.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-locationPoints: [];
-
-photo: {}
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  locationPoints: [],
+  photo: {}
+});
 
 /***/ }),
 
@@ -59350,8 +59305,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Owner\Documents\PERSONAL_PROJECTS\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
