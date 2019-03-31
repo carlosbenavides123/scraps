@@ -1,5 +1,6 @@
 export default {
     saveImageAPI({commit}, payload){
+        console.log(payload.photo)
         axios.post('api/trash/', {
             photo: payload.photo,
             long: payload.long,

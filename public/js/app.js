@@ -6248,7 +6248,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['saveImageAPI']), {
     sendImage: function sendImage(data) {
       var payload = {
-        photo: './../../../public/images/trash_1.jpg',
+        // photo: '/images/trash_1.jpg',
+        // photo: 'trash_1.jpg',
+        photo: 'http://localhost:8080/images/trash_1.jpg',
         long: 34.073959,
         lat: -118.065181,
         size: 23
@@ -58718,6 +58720,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   saveImageAPI: function saveImageAPI(_ref, payload) {
     var commit = _ref.commit;
+    console.log(payload.photo);
     axios.post('api/trash/', {
       photo: payload.photo,
       long: payload.long,
