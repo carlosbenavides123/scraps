@@ -1,4 +1,5 @@
 export default {
     locationPoints: [],
-    photo: {}
+    photo: {},
+    currentCoord: {}
 }

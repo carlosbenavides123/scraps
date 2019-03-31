@@ -13,10 +13,10 @@
 						<div class="col-6">
 							<vue-google-heatmap
 								class="confirmation__field-heatmap"
-								:points="trash.location"
+								:points="[currentCoord]"
 								:height="'100%'"
-								:lat="trash.location[0].lat"
-								:lng="trash.location[0].lng"
+								:lat="currentCoord.lat"
+								:lng="currentCoord.lng"
 								:initialZoom="15"
 							/>
 						</div>
@@ -31,16 +31,9 @@
 	</div>
 </template>
 <script>
+import { mapState, mapGetters, mapActions } from "vuex";
 export default {
     props: ['imageData'],
-    data() {
-		return {
-			trash: {
-				size: "large",
-				location: [{ lat: 34.828921, lng: -118.943481 }]
-			}
-		};
-    },
     methods: {
         closeModal() {
             this.$emit('closeModal')
@@ -49,6 +42,11 @@ export default {
             this.$emit('sendImage')
             this.$emit('closeModal')
         }
+    },
+    computed: {
+        ...mapGetters([
+            'currentCoord'
+        ])
     }
 };
 </script>

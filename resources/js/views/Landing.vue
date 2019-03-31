@@ -16,12 +16,17 @@
 				@input="storePhoto"
 			>
 		</div>
-		<confirmation-modal v-if="modal" @closeModal="closeModal" @sendImage="sendImage" :imageData="imageData"/>
+		<confirmation-modal
+			v-if="modal"
+			@closeModal="closeModal"
+			@sendImage="sendImage"
+			:imageData="imageData"
+		/>
 	</div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import googleMap from "./../components/googleMaps/googleMapApi";
 import confirmationModal from "./../components/confirmationModal";
 export default {
@@ -34,46 +39,44 @@ export default {
 		return {
 			file: null,
 			modal: false,
-            imageData: null,
-			timer:'',
-			lng: null,
-			lat: null
+			imageData: null,
+			timer: "",
 		};
 	},
-	created(){
+	created() {
 		this.$getLocation({
-				enableHighAccuracy: true,
-				timeout: Infinity
+			enableHighAccuracy: true,
+			timeout: Infinity
 		}).then(coordinates => {
-			this.lng = coordinates.lng;
-			this.lat = coordinates.lat;
+			this.$store.dispatch("setCoord", {
+				lng: coordinates.lng,
+				lat: coordinates.lat
+			});
 		});
-	},
+    },
+    computed: {
+        ...mapGetters([
+            'currentCoord'
+        ])
+    },
 	methods: {
 		clickInput() {
 			$("#imgInput").click();
-						console.log("test")
-
 		},
 		sendImage() {
-            let formData = new FormData()
-			formData.append('photo', this.file)
-			formData.append('lng', this.lng)
-			formData.append('lat', this.lat)
-			formData.append('size', 23)
+			let formData = new FormData();
+			formData.append("photo", this.file);
+			formData.append("lng", this.currentCoord.lng);
+			formData.append("lat", this.currentCoord.lat);
+			formData.append("size", 23);
 
-			this.$store.dispatch('saveImageAPI', formData);
+			this.$store.dispatch("saveImageAPI", formData);
 		},
 		clickInput() {
-			console.log(this.lat);
 			this.$refs.fileInput.click();
-						console.log("test")
-
 		},
 
 		storePhoto() {
-						console.log("test")
-
 			const input = this.$refs.fileInput;
 			const files = input.files;
 			if (files && files[0]) {
@@ -82,8 +85,8 @@ export default {
 					this.imageData = e.target.result;
 				};
 				reader.readAsDataURL(files[0]);
-                this.file = files[0];
-                this.modal = true;
+				this.file = files[0];
+				this.modal = true;
 			}
 		},
 

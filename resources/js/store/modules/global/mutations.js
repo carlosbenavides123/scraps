@@ -5,5 +5,9 @@ export default {
 
     FETCH_PHOTO_INFO(state, payload){
         state.photo = JSON.parse(payload)
+    },
+
+    SET_COORD(state, payload){
+        state.currentCoord = payload
     }
 }
