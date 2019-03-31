@@ -35,6 +35,11 @@
 				</div>
 			</div>
 		</div>
+        <div class="row">
+            <div class="col-12">
+                <button v-on:click="sendImage()"></button>
+            </div>
+        </div>
 	</div>
 </template>
 <script>
@@ -51,24 +56,5 @@ export default {
             }
         }
     },
-    methods: {
-        ...mapActions(
-            [
-                'saveImageAPI'
-            ]
-        ),
-        sendImage: function(data){
-            let payload = {
-                photo: '/images/trash_1.jpg',
-                // photo: 'trash_1.jpg',
-                // photo: 'http://localhost:8080/images/trash_1.jpg',
-                long: 34.073959,
-                lat: -118.065181,
-                size: 23
-            }
-            this.saveImageAPI(payload);
-            console.log("hit")
-        }
-    }
 }
 </script>

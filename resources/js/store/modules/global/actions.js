@@ -9,7 +9,7 @@ export default {
         })
         .then(response => {
             console.log(response);
-            commit('FETCH_PHOTO_INFO', response.config.data)
+            // commit('FETCH_PHOTO_INFO', response.config.data)
         }).catch(
             failure => console.error(failure)
         )

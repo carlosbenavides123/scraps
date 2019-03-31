@@ -6171,10 +6171,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6227,21 +6228,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }]
       }
     };
-  },
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['saveImageAPI']), {
-    sendImage: function sendImage(data) {
-      var payload = {
-        photo: '/images/trash_1.jpg',
-        // photo: 'trash_1.jpg',
-        // photo: 'http://localhost:8080/images/trash_1.jpg',
-        long: 34.073959,
-        lat: -118.065181,
-        size: 23
-      };
-      this.saveImageAPI(payload);
-      console.log("hit");
-    }
-  })
+  }
 });
 
 /***/ }),
@@ -6256,6 +6243,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../components/googleMaps/googleMapApi */ "./resources/js/components/googleMaps/googleMapApi.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6267,19 +6259,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Landing",
   components: {
     googleMap: _components_googleMaps_googleMapApi__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
-    return {};
+    return {
+      file: ''
+    };
   },
-  methods: {
+  methods: _objectSpread({
     clickInput: function clickInput() {
       $("#imgInput").click();
     }
-  }
+  }, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['saveImageAPI']), {
+    sendImage: function sendImage() {
+      var payload = {
+        photo: '/images/trash_1.jpg',
+        // photo: 'trash_1.jpg',
+        // photo: 'http://localhost:8080/images/trash_1.jpg',
+        long: 34.073959,
+        lat: -118.065181,
+        size: 23
+      };
+      this.saveImageAPI(payload);
+      console.log("hit");
+    }
+  })
 });
 
 /***/ }),
@@ -42443,6 +42451,18 @@ var render = function() {
           1
         )
       ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("button", {
+          on: {
+            click: function($event) {
+              return _vm.sendImage()
+            }
+          }
+        })
+      ])
     ])
   ])
 }
@@ -42498,6 +42518,7 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("input", {
+          ref: "file",
           staticStyle: { display: "none" },
           attrs: {
             type: "file",
@@ -58685,8 +58706,7 @@ __webpack_require__.r(__webpack_exports__);
       lat: payload.lat,
       size: payload.size
     }).then(function (response) {
-      console.log(response);
-      commit('FETCH_PHOTO_INFO', response.config.data);
+      console.log(response); // commit('FETCH_PHOTO_INFO', response.config.data)
     }).catch(function (failure) {
       return console.error(failure);
     });
