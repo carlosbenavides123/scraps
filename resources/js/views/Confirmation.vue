@@ -18,6 +18,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="text-left">
+                        <button v-on:click="sendImage()">Post Image</button>
                         <p class="confirmation__fields-size">Size: {{ trash.size }}</p>
                     </div>
                 </div>
@@ -54,6 +55,7 @@
     </div>
 </template>
 <script>
+import {mapActions} from 'vuex'
 export default {
     name: 'Confirmation',
     data(){
@@ -64,6 +66,23 @@ export default {
                     { lat: 34.828921, lng:-118.943481}
                 ],
             }
+        }
+    },
+    methods: {
+        ...mapActions(
+            [
+                'saveImageAPI'
+            ]
+        ),
+        sendImage: function(data){
+            let payload = {
+                photo: '/images/trash_1.jpg',
+                long: 34.073959,
+                lat: -118.065181,
+                size: 23
+            }
+            this.saveImageAPI(payload);
+            console.log("hit")
         }
     }
 }

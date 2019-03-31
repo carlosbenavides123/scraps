@@ -6170,6 +6170,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6225,6 +6230,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Confirmation',
   data: function data() {
@@ -6237,7 +6244,19 @@ __webpack_require__.r(__webpack_exports__);
         }]
       }
     };
-  }
+  },
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['saveImageAPI']), {
+    sendImage: function sendImage(data) {
+      var payload = {
+        photo: '/images/trash_1.jpg',
+        long: 34.073959,
+        lat: -118.065181,
+        size: 23
+      };
+      this.saveImageAPI(payload);
+      console.log("hit");
+    }
+  })
 });
 
 /***/ }),
@@ -42379,6 +42398,18 @@ var render = function() {
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-12" }, [
           _c("div", { staticClass: "text-left" }, [
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.sendImage()
+                  }
+                }
+              },
+              [_vm._v("Post Image")]
+            ),
+            _vm._v(" "),
             _c("p", { staticClass: "confirmation__fields-size" }, [
               _vm._v("Size: " + _vm._s(_vm.trash.size))
             ])
@@ -58679,10 +58710,25 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*!******************************************************!*\
   !*** ./resources/js/store/modules/global/actions.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  saveImageAPI: function saveImageAPI(payload) {
+    axios.post('api/saveTrash/', {
+      photo: payload.photo,
+      long: payload.long,
+      lat: payload.lat,
+      size: payload.size
+    }).then(function (response) {
+      console.log(response);
+    }).catch(function (failure) {
+      return console.error(failure);
+    });
+  }
+});
 
 /***/ }),
 
@@ -58713,7 +58759,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mutations */ "./resources/js/store/modules/global/mutations.js");
 /* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_mutations__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions */ "./resources/js/store/modules/global/actions.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_actions__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -58722,7 +58767,7 @@ __webpack_require__.r(__webpack_exports__);
   state: _state__WEBPACK_IMPORTED_MODULE_0___default.a,
   getters: _getters__WEBPACK_IMPORTED_MODULE_1___default.a,
   mutations: _mutations__WEBPACK_IMPORTED_MODULE_2___default.a,
-  actions: _actions__WEBPACK_IMPORTED_MODULE_3___default.a
+  actions: _actions__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
 /***/ }),

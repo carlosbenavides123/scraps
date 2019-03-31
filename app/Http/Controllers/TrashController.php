@@ -13,7 +13,6 @@ class TrashController extends Controller
 
             //get filename with extension
             $filenametostore = $this->getFileName($request, $request->file('photo')->getClientOriginalName());
-
             //Upload File to s3
             try {
                 $response = Storage::disk('s3')->put($filenametostore, fopen($request->file('photo'), 'r+'), 'public');
@@ -57,7 +56,7 @@ class TrashController extends Controller
     {
         return Trash::all();
     }
-    
+
     private function getFileName($request, $filenamewithextension)
     {
         //get filename without extension
@@ -70,8 +69,7 @@ class TrashController extends Controller
     }
 }
 
- 
- 
- 
- 
- 
+
+
+
+
