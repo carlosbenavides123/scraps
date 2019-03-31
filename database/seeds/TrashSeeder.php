@@ -13,6 +13,6 @@ class TrashSeeder extends Seeder
      */
     public function run()
     {
-        factory(Trash::class, 10000)->create();
+        factory(Trash::class, 200)->create();
     }
 }
