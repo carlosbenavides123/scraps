@@ -1,7 +1,7 @@
 
 <template>
   <vue-google-heatmap
-    :points="location"
+    :points="locationPoints"
     :height="'93vh'"
     :lat="ucla.lat"
     :lng="ucla.lng"
@@ -17,21 +17,16 @@ export default {
   data() {
     return {
       ucla: { lat: 34.068921, lng: -118.445181 },
-      points: [
-      ]
     };
   },
   created(){
-    console.log("hello");
     this.$store.dispatch("populategoogleapi");
-    // this.interval = setInterval(() => this.loadData(), 12000);
+    this.interval = setInterval(() => this.loadData(), 12000);
   },
   computed: {
-      ...mapState({
-              location: state => state.locationPoints
-        }),
       ...mapGetters(
           [
+              'locationPoints',
               'photoId'
           ]
       )
