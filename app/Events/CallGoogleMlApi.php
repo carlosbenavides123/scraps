@@ -32,6 +32,7 @@ class CallGoogleMlApi
      */
     public function broadcastOn()
     {
+        dd('able to broad cast');
         return new PrivateChannel('channel-name');
     }
 }
