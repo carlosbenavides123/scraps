@@ -35,18 +35,26 @@
 				</div>
 			</div>
 		</div>
+        <div class="row">
+            <div class="col-12">
+                <button v-on:click="sendImage()"></button>
+            </div>
+        </div>
 	</div>
 </template>
 <script>
+import {mapActions} from 'vuex'
 export default {
-	name: "Confirmation",
-	data() {
-		return {
-			trash: {
-				size: "large",
-				location: [{ lat: 34.828921, lng: -118.943481 }]
-			}
-		};
-	}
-};
+    name: 'Confirmation',
+    data(){
+        return {
+            trash: {
+                size: 'large',
+                location: [
+                    { lat: 34.828921, lng:-118.943481}
+                ],
+            }
+        }
+    },
+}
 </script>

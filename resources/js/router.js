@@ -12,7 +12,7 @@ const router = new VueRouter({
     routes: [
         { path: '/', component: Landing },
         // { path: '/photo', component: Photo},
-        { path: '/confirmation', component: Confirmation}
+        // { path: '/confirmation', component: Confirmation}
     ]
 });
 
