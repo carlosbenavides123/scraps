@@ -6,6 +6,8 @@ use App\Events\CallGoogleMlApi;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+use App\TrashML;
+
 class HttpGoogleMlApi implements ShouldQueue
 {
     /**
@@ -16,6 +18,28 @@ class HttpGoogleMlApi implements ShouldQueue
     public function __construct()
     {
         //
+    }
+
+    private function newEntry($entry)
+    {
+        $lat = $entry;
+        $lng = $entry;
+        $size = $entry;
+        $url = $entry;
+
+        TrashML::create([
+            'lat' => $lat,
+            'lng' => $lng,
+            'size' => $size,
+            'url' => $url
+        ]);
+    }
+
+    private function loopThroughData($response)
+    {
+        foreach ($response as $entry) {
+            $this->newEntry($entry);
+        }
     }
 
     /**
@@ -30,10 +54,12 @@ class HttpGoogleMlApi implements ShouldQueue
         $url = $event->url;
         $client = new \GuzzleHttp\Client();
 
-        $payload = ['url' => $url];
+        $payload = ['name' => $url];
 
         $response = $client->request('POST', $server, $payload);
+
         // dd($response);
+        $this->loopThroughData($response);
         // $event->broadcastOn();
     }
 }

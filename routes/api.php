@@ -15,3 +15,5 @@ use Illuminate\Http\Request;
 
 Route::post('/trash', 'TrashController@saveTrash');
 Route::get('/trash/all', 'TrashController@getAll');
+
+Route::get('/trash/ml', 'TrashMLController@getMlData');
