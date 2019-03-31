@@ -1,1 +1,2 @@
+locationPoints: []
 photo: {}

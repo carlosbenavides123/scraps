@@ -34,9 +34,10 @@ export default {
 		return {
 			file: null,
 			modal: false,
-			imageData: null
+            imageData: null,
+            timer:''
 		};
-	},
+    },
 	methods: {
 		clickInput() {
 			$("#imgInput").click();
@@ -44,14 +45,14 @@ export default {
 		sendImage() {
             let formData = new FormData()
 			formData.append('photo', this.file)
-			formData.append('long', 34.073959)
+			formData.append('lng', 34.073959)
 			formData.append('lat', -118.065181)
 			formData.append('size', 23)
-			
+
 			// let payload = {
 			// 	photo: url,
 			// 	long: 34.073959,
-			// 	lat: -118.065181,
+			// 	lat : -118.065181,
 			// 	size: 23
 			// };
 			this.$store.dispatch('saveImageAPI', formData);
