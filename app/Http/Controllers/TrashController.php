@@ -5,6 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Trash;
 
+use Event;
+use App\Events\CallGoogleMlApi;
+
 class TrashController extends Controller
 {
     public function saveTrash(Request $request)
@@ -26,7 +29,7 @@ class TrashController extends Controller
             } catch (\Exception $e) {
                 dd($e);
             }
-
+            
             return $this->saveToDb($request['lat'], $request['long'], $request['size'], $url);
         } else {
             return ['message' => 'No photo found'];
@@ -45,6 +48,9 @@ class TrashController extends Controller
             dd($e);
             return ['message' => 'Photo upload was not successful'];
         }
+        
+        event(new CallGoogleMlApi($url));
+        
         return [
             'message' => 'Photo was successful',
             'lat' => $lat,
