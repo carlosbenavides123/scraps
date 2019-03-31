@@ -6254,12 +6254,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       timeout: Infinity
     }).then(function (coordinates) {
       _this.$store.dispatch("setCoord", {
-        lng: coordinates.lng,
-        lat: coordinates.lat
+        // lng: coordinates.lng,
+        // lat: coordinates.lat
+        lng: -118.445183,
+        lat: 34.06892
       });
     });
   },
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['currentCoord'])),
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(["currentCoord"])),
   methods: (_methods = {
     clickInput: function clickInput() {
       $("#imgInput").click();
@@ -41821,7 +41823,7 @@ var render = function() {
             accept: "image/*",
             capture: "camera"
           },
-          on: { input: _vm.storePhoto }
+          on: { change: _vm.storePhoto }
         })
       ]),
       _vm._v(" "),

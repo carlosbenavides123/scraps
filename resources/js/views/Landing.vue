@@ -13,7 +13,7 @@
 				ref="fileInput"
 				capture="camera"
 				style="display: none;"
-				@input="storePhoto"
+				@change="storePhoto"
 			>
 		</div>
 		<confirmation-modal
@@ -40,7 +40,7 @@ export default {
 			file: null,
 			modal: false,
 			imageData: null,
-			timer: "",
+			timer: ""
 		};
 	},
 	created() {
@@ -49,16 +49,16 @@ export default {
 			timeout: Infinity
 		}).then(coordinates => {
 			this.$store.dispatch("setCoord", {
-				lng: coordinates.lng,
-				lat: coordinates.lat
+				// lng: coordinates.lng,
+				// lat: coordinates.lat
+				lng: -118.445183,
+				lat: 34.06892
 			});
 		});
-    },
-    computed: {
-        ...mapGetters([
-            'currentCoord'
-        ])
-    },
+	},
+	computed: {
+		...mapGetters(["currentCoord"])
+	},
 	methods: {
 		clickInput() {
 			$("#imgInput").click();
