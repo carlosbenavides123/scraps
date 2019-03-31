@@ -31,6 +31,7 @@
             const mediaStreamTrack = this.mediaStream.getVideoTracks()[0]
             const imageCapture = new window.ImageCapture(mediaStreamTrack)
             return imageCapture.takePhoto().then(blob => {
+                console.log(imageCapture)
                 console.log(blob)
             })
 

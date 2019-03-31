@@ -2,7 +2,8 @@
 	<div id="landing" class="text-center">
 		<google-map/>
 		<div class="scrap-maps__camera text-center">
-			<router-link class="btn btn-dark scrap-maps__camera-button" to="photo">Snap a Photo <i class="fas fa-camera" /></router-link>
+			<button class="btn btn-dark scrap-maps__camera-button" @click="clickInput">Snap a Photo <i class="fas fa-camera"/></button>
+            <input type="file" id="imgInput" accept="image/*" capture="camera" style="display: none;">
 		</div>
 	</div>
 </template>
@@ -16,7 +17,12 @@ export default {
 	},
 	data() {
 		return {};
-	}
+    },
+    methods: {
+        clickInput() {
+            $("#imgInput").click();
+        }
+    }
 };
 </script>
 
