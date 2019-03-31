@@ -16,7 +16,7 @@ class CreateTashMLSTable extends Migration
         Schema::create('trash_ml_table', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->decimal('lat', 10, 8);
-            $table->decimal('long', 11, 8);
+            $table->decimal('lng', 11, 8);
             $table->string('size');
             $table->string('url');
             $table->timestamps();

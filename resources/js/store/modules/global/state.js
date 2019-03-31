@@ -1,1 +1,3 @@
-captures:[]
+export default {
+    locationPoints: []
+};

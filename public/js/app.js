@@ -6084,6 +6084,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 //
 //
 //
@@ -6095,6 +6096,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "googleMap",
   data: function data() {
@@ -6107,11 +6109,11 @@ __webpack_require__.r(__webpack_exports__);
         lat: 34.068921,
         lng: -118.445181
       }, {
-        lat: 34.062500,
-        lng: -118.448020
+        lat: 34.0625,
+        lng: -118.44802
       }, {
-        lat: 34.063030,
-        lng: -118.447990
+        lat: 34.06303,
+        lng: -118.44799
       }, {
         lat: 33.068952,
         lng: -127.445181
@@ -6119,23 +6121,23 @@ __webpack_require__.r(__webpack_exports__);
         lat: 34.068959,
         lng: -118.045181
       }, {
-        lat: 34.071300,
-        lng: -118.439670
+        lat: 34.0713,
+        lng: -118.43967
       }, {
-        lat: 34.075240,
-        lng: -118.444440
+        lat: 34.07524,
+        lng: -118.44444
       }, {
-        lat: 34.069190,
-        lng: -118.445140
+        lat: 34.06919,
+        lng: -118.44514
       }, {
-        lat: 34.070190,
-        lng: -118.555140
+        lat: 34.07019,
+        lng: -118.55514
       }, {
-        lat: 34.064830,
-        lng: -118.444370
+        lat: 34.06483,
+        lng: -118.44437
       }, {
-        lat: 34.071300,
-        lng: -118.639670
+        lat: 34.0713,
+        lng: -118.63967
       }, {
         lat: 34.068729,
         lng: -118.445007
@@ -6156,7 +6158,15 @@ __webpack_require__.r(__webpack_exports__);
         lng: -118.445181
       }]
     };
-  }
+  },
+  created: function created() {
+    console.log("hello");
+    this.$store.dispatch("populategoogleapi");
+  } //   mounted() {
+  //     console.log("mounted");
+  //     this.$store.dispatch("populategoogleapi");
+  //   }
+
 });
 
 /***/ }),
@@ -58454,7 +58464,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.js */ "./node_modules/@fortawesome/fontawesome-free/js/all.js");
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: '#app',
+  el: "#app",
   store: _store__WEBPACK_IMPORTED_MODULE_2__["default"],
   router: _js_router_js__WEBPACK_IMPORTED_MODULE_1__["default"],
   render: function render(h) {
@@ -58650,10 +58660,20 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*!******************************************************!*\
   !*** ./resources/js/store/modules/global/actions.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  populategoogleapi: function populategoogleapi(_ref) {
+    var commit = _ref.commit;
+    var path = "/api/trash/all";
+    axios.get(path).then(function (res) {
+      commit("POPULATEGOOGLEAPI", res.data);
+    });
+  }
+});
 
 /***/ }),
 
@@ -58661,10 +58681,13 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*!******************************************************!*\
   !*** ./resources/js/store/modules/global/getters.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({// majorData: state => index => state.majorCards[index].majorData
+});
 
 /***/ }),
 
@@ -58678,22 +58701,18 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ "./resources/js/store/modules/global/state.js");
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_state__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getters */ "./resources/js/store/modules/global/getters.js");
-/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_getters__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mutations */ "./resources/js/store/modules/global/mutations.js");
-/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_mutations__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions */ "./resources/js/store/modules/global/actions.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_actions__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  state: _state__WEBPACK_IMPORTED_MODULE_0___default.a,
-  getters: _getters__WEBPACK_IMPORTED_MODULE_1___default.a,
-  mutations: _mutations__WEBPACK_IMPORTED_MODULE_2___default.a,
-  actions: _actions__WEBPACK_IMPORTED_MODULE_3___default.a
+  state: _state__WEBPACK_IMPORTED_MODULE_0__["default"],
+  getters: _getters__WEBPACK_IMPORTED_MODULE_1__["default"],
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_2__["default"],
+  actions: _actions__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
 /***/ }),
@@ -58702,10 +58721,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************!*\
   !*** ./resources/js/store/modules/global/mutations.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  POPULATEGOOGLEAPI: function POPULATEGOOGLEAPI(state, payload) {
+    console.log("mutations");
+    console.log(payload);
+    console.log("mutations");
+    state.locationPoints = payload;
+  }
+});
 
 /***/ }),
 
@@ -58713,10 +58741,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************!*\
   !*** ./resources/js/store/modules/global/state.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-captures: [];
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  locationPoints: []
+});
 
 /***/ }),
 
@@ -58963,8 +58995,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\amzer\Desktop\LAHacks\scraps\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/mike/Development/hackathons/scraps/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/mike/Development/hackathons/scraps/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

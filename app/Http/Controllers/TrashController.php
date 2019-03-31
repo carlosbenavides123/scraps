@@ -27,17 +27,17 @@ class TrashController extends Controller
                 dd($e);
             }
 
-            return $this->saveToDb($request['lat'], $request['long'], $request['size'], $url);
+            return $this->saveToDb($request['lat'], $request['lng'], $request['size'], $url);
         } else {
             return ['message' => 'No photo found'];
         }
     }
-    private function saveToDb($lat, $long, $size, $url)
+    private function saveToDb($lat, $lng, $size, $url)
     {
         try {
             Trash::create([
                 'lat' => $lat,
-                'long' => $long,
+                'lng' => $lng,
                 'size' => $size,
                 'url' => $url
             ]);
@@ -48,7 +48,7 @@ class TrashController extends Controller
         return [
             'message' => 'Photo was successful',
             'lat' => $lat,
-            'long' => $long,
+            'lng' => $lng,
             'size' => $size,
             'url' => $url
         ];
