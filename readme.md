@@ -7,5 +7,6 @@ Google Vision API was meant to scan the photos to verify that trash is present a
 - Vue.js
 - Flask
 - Laravel
+- Docker
 - Google Maps API
 - Google Vision API (Did not get working properly)
